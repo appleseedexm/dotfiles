@@ -100,6 +100,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# aliases
+alias silent="dunstctl set-paused toggle"
+source $HOME/.shell_aliases
 
 # theme.sh
 if command -v theme.sh > /dev/null; then
@@ -123,18 +126,18 @@ if command -v theme.sh > /dev/null; then
 	# Interactively load a dark theme
 	alias thd='theme.sh --dark -i'
 fi
-# theme.sh
 
+# nvm
 source /usr/share/nvm/init-nvm.sh
 
-source $HOME/.shell_aliases
-
+# nmon
 export NMON=cmt
 
+# zoxide
 export _ZO_EXCLUDE_DIRS="$HOME:$HOME/code/other/*"
 eval "$(zoxide init zsh --cmd cd)"
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+# sdkman
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
