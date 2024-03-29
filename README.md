@@ -6,4 +6,4 @@ My more complex dotfiles got their own repos:
 - [nvim](https://github.com/appleseedexm/nvim)
 - [hyprland](https://github.com/appleseedexm/hypr)
 - [ironbar](https://github.com/appleseedexm/ironbar)
-- *deprecated*[i3](https://github.com/appleseedexm/i3)
+- *deprecated* [i3](https://github.com/appleseedexm/i3)
