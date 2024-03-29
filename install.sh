@@ -1,13 +1,14 @@
 #!/bin/bash
 
 CONFIG_PATH=$HOME/.config
+SOURCE_PATH=$PWD
 
 source_files=(
-    "dunst/dunstrc"
-    "foot/foot.ini"
-    "yofi/yofi.config"
-    "tmux/.tmux.conf"
-    "zsh/.zshrc"
+    "$SOURCE_PATH/dunst/dunstrc"
+    "$SOURCE_PATH/foot/foot.ini"
+    "$SOURCE_PATH/yofi/yofi.config"
+    "$SOURCE_PATH/tmux/.tmux.conf"
+    "$SOURCE_PATH/zsh/.zshrc"
 )
 
 dest_files=(
@@ -18,7 +19,7 @@ dest_files=(
     "$HOME/.zshrc"
 )
 
-backups_created=()
+BACKUPS_CREATED=()
 
 for ((i=0;i<${#source_files[@]};i++)) do
 
@@ -30,14 +31,14 @@ for ((i=0;i<${#source_files[@]};i++)) do
         ln -bs ${source_files[i]} ${dest_files[i]}
     fi
 
-    backup_path=${dest_files[i]}~
-    if [[ -f ${backup_path} || -L ${backup_path} ]]; then
-        backups_created+=($backup_path)
+    BACKUP_PATH=${dest_files[i]}~
+    if [[ -f ${BACKUP_PATH} || -L ${BACKUP_PATH} ]]; then
+        BACKUPS_CREATED+=($BACKUP_PATH)
     fi
 done
 
 echo "Backups existing:"
-for backup in ${backups_created[@]}; do
+for backup in ${BACKUPS_CREATED[@]}; do
     echo $backup
 done
 
