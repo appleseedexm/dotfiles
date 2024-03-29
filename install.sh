@@ -28,6 +28,7 @@ for ((i=0;i<${#source_files[@]};i++)) do
     if [  -L ${dest_files[i]} ]; then
         echo "Is already a link, no action: ${dest_files[i]}"
     else
+        mkdir -p $(dirname ${dest_files[i]})
         ln -bs ${source_files[i]} ${dest_files[i]}
     fi
 
@@ -35,6 +36,10 @@ for ((i=0;i<${#source_files[@]};i++)) do
     if [[ -f ${BACKUP_PATH} || -L ${BACKUP_PATH} ]]; then
         BACKUPS_CREATED+=($BACKUP_PATH)
     fi
+
+    echo
+    echo
+    echo
 done
 
 echo "Backups existing:"
