@@ -128,7 +128,7 @@ if command -v theme.sh > /dev/null; then
 fi
 
 # nvm
-source /usr/share/nvm/init-nvm.sh
+source /usr/share/nvm/init-nvm.sh --no-use
 
 # nmon
 export NMON=cmt
