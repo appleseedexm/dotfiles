@@ -52,10 +52,15 @@ export _ZO_EXCLUDE_DIRS="$HOME:$HOME/code/other/*"
 eval "$(zoxide init zsh --cmd cd)"
 
 # nvm
-source /usr/share/nvm/init-nvm.sh --no-use
+if [ -s "$HOME/.nvm/nvm.sh" ]; then
+  export NVM_DIR="$HOME/.nvm"
+  nvm_cmds=(nvm node npm yarn)
+  for cmd in $nvm_cmds ; do
+    alias $cmd="unalias $nvm_cmds && unset nvm_cmds && . $NVM_DIR/nvm.sh && $cmd"
+  done
+fi
 
 # sdkman
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
 
