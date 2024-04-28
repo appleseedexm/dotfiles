@@ -41,6 +41,9 @@ if command -v theme.sh > /dev/null; then
 	alias thd='theme.sh --dark -i'
 fi
 
+# fzf
+eval "$(fzf --zsh)"
+
 # nmon
 export NMON=cmt
 
