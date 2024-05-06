@@ -1,5 +1,6 @@
 export PATH=$HOME/bin:/usr/local/bin:$HOME/.cargo/bin:$PATH
 export ZSH="$HOME/.oh-my-zsh"
+export EDITOR=nvim
 
 ZSH_THEME="nanotech"
 plugins=(git)
@@ -8,6 +9,7 @@ source $ZSH/oh-my-zsh.sh
 
 # aliases
 alias silent="dunstctl set-paused toggle"
+alias nv="nvim . "
 
 # load private configs 
 if [ -f $HOME/.shell_aliases ]; then
