@@ -10,6 +10,7 @@ source $ZSH/oh-my-zsh.sh
 # aliases
 alias silent="dunstctl set-paused toggle"
 alias nv="nvim . "
+alias pmqi="pacman -Qi | grep -i name"
 
 # load private configs 
 if [ -f $HOME/.shell_aliases ]; then
