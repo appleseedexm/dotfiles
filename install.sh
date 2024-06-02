@@ -9,6 +9,10 @@ source_files=(
     "$SOURCE_PATH/yofi/yofi.config"
     "$SOURCE_PATH/tmux/.tmux.conf"
     "$SOURCE_PATH/zsh/.zshrc"
+    "$SOURCE_PATH/tofi/config"
+    "$SOURCE_PATH/waybar/config"
+    "$SOURCE_PATH/waybar/style.css"
+
 )
 
 dest_files=(
@@ -17,6 +21,9 @@ dest_files=(
     "$CONFIG_PATH/yofi/yofi.config"
     "$HOME/.tmux.conf"
     "$HOME/.zshrc"
+    "$CONFIG_PATH/tofi/config"
+    "$CONFIG_PATH/waybar/config"
+    "$CONFIG_PATH/waybar/style.css"
 )
 
 BACKUPS_CREATED=()
