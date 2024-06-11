@@ -61,6 +61,7 @@ if [ -s "$HOME/.nvm/nvm.sh" ]; then
   for cmd in $nvm_cmds ; do
     alias $cmd="unalias $nvm_cmds && unset nvm_cmds && . $NVM_DIR/nvm.sh && $cmd"
   done
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 fi
 
 # sdkman
