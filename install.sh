@@ -11,6 +11,7 @@ source_files=(
     "$SOURCE_PATH/zsh/.zshrc"
     "$SOURCE_PATH/tofi"
     "$SOURCE_PATH/waybar"
+    "$SOURCE_PATH/i3"
 )
 
 dest_files=(
@@ -19,6 +20,7 @@ dest_files=(
     "$CONFIG_PATH/yofi/yofi.config"
     "$HOME/.tmux.conf"
     "$HOME/.zshrc"
+    "$CONFIG_PATH/"
     "$CONFIG_PATH/"
     "$CONFIG_PATH/"
 )
