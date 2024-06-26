@@ -3,7 +3,7 @@ export ZSH="$HOME/.oh-my-zsh"
 export EDITOR=nvim
 
 ZSH_THEME="nanotech"
-plugins=(git)
+plugins=(git gradle)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -11,6 +11,7 @@ source $ZSH/oh-my-zsh.sh
 alias silent="dunstctl set-paused toggle"
 alias nv="nvim . "
 alias paqi="pacman -Qi | grep -i name"
+alias today="nvim -c ObsidianToday"
 
 # load private configs 
 if [ -f $HOME/.shell_aliases ]; then
