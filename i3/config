@@ -40,6 +40,7 @@ exec --no-startup-id setxkbmap -layout eu
 # SSH
 exec --no-startup-id ssh-agent
 
+exec smallscreen
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
