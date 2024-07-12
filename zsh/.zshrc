@@ -12,6 +12,7 @@ alias silent="dunstctl set-paused toggle"
 alias nv="nvim . "
 alias paqi="pacman -Qi | grep -i name"
 alias today="nvim -c ObsidianToday"
+alias cargoupdate="cargo install $(cargo install --list | egrep '^[a-z0-9_-]+ v[0-9.]+:$' | cut -f1 -d' ')"
 
 # load private configs 
 if [ -f $HOME/.shell_aliases ]; then
