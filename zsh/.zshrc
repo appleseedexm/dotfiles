@@ -3,7 +3,7 @@ export ZSH="$HOME/.oh-my-zsh"
 export EDITOR=nvim
 
 ZSH_THEME="nanotech"
-plugins=(git gradle)
+plugins=(git gradle zsh-vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
