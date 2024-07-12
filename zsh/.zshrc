@@ -47,7 +47,7 @@ if command -v theme.sh > /dev/null; then
 fi
 
 # fzf
-eval "$(fzf --zsh)"
+source <(fzf --zsh)
 
 # nmon
 export NMON=cmt
