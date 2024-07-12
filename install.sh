@@ -12,6 +12,7 @@ source_files=(
     "$SOURCE_PATH/tofi"
     "$SOURCE_PATH/waybar"
     "$SOURCE_PATH/i3"
+    "$SOURCE_PATH/system/.inputrc"
 )
 
 dest_files=(
@@ -23,6 +24,7 @@ dest_files=(
     "$CONFIG_PATH/"
     "$CONFIG_PATH/"
     "$CONFIG_PATH/"
+    "$HOME/.inputrc"
 )
 
 BACKUPS_CREATED=()
