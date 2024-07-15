@@ -1,6 +1,7 @@
 export PATH=$HOME/bin:/usr/local/bin:$HOME/.cargo/bin:$PATH
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR=nvim
+export ZVM_INIT_MODE=sourcing
 
 ZSH_THEME="nanotech"
 plugins=(git gradle zsh-vi-mode)
