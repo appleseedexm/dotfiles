@@ -1,0 +1,14 @@
+display_full_path = true
+search_submodules = false
+recursive_submodules = false
+excluded_dirs = ["/home/asx/code/other"]
+search_paths = [
+    "$HOME/.config/nvim",
+    "$HOME/.config/ironbar",
+    "$HOME/.config/hypr",
+    "$HOME/code/cv",
+]
+
+[[search_dirs]]
+path = "$HOME/code"
+depth = 1
