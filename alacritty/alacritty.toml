@@ -1,0 +1,9 @@
+import = [
+    "~/.config/alacritty/keyboard.toml",
+]
+
+[shell]
+program = "/usr/bin/zsh"
+[font]
+size = 6.0
+
