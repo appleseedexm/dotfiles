@@ -13,6 +13,8 @@ source_files=(
     "$SOURCE_PATH/waybar"
     "$SOURCE_PATH/i3"
     "$SOURCE_PATH/system/.inputrc"
+    "$SOURCE_PATH/tms"
+    "$SOURCE_PATH/alacritty"
 )
 
 dest_files=(
@@ -25,6 +27,8 @@ dest_files=(
     "$CONFIG_PATH/"
     "$CONFIG_PATH/"
     "$HOME/.inputrc"
+    "$CONFIG_PATH/"
+    "$CONFIG_PATH/"
 )
 
 BACKUPS_CREATED=()
