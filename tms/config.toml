@@ -8,6 +8,9 @@ search_paths = [
     "$HOME/.config/hypr",
     "$HOME/code/cv",
 ]
+bookmarks = [
+    "$HOME/.obsidian/default",
+]
 
 [[search_dirs]]
 path = "$HOME/code"
