@@ -9,7 +9,6 @@ plugins=(git gradle zsh-vi-mode)
 source $ZSH/oh-my-zsh.sh
 
 # aliases
-alias silent="dunstctl set-paused toggle"
 alias nv="nvim . "
 alias paqi="pacman -Qi | grep -i name"
 alias today="nvim -c ObsidianToday"
