@@ -34,7 +34,6 @@ if command -v theme.sh > /dev/null; then
 	}
 
 	zle -N last_theme
-	bindkey '^O' last_theme
 
 	alias th='theme.sh -i'
 
