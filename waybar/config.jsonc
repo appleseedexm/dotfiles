@@ -14,6 +14,7 @@
         "custom/right",
         "custom/left",
         "tray",
+        "custom/mic",
         "custom/dunst",
         "custom/right"
     ],
@@ -191,6 +192,12 @@
         "format": " ",
         "interval": "once",
         "tooltip": false
+    },
+    "custom/mic": {
+        "format": "{}  ",
+        "interval": "once",
+        "exec": "if [ $(wpctl status | grep 'RØDE NT-USB+' | grep -i vol | grep -c MUTED) -eq  '1' ]; then echo '󰍭'; else echo '󰍬'; fi",
+        "signal": 2
     },
     "custom/dunst": {
         "format": "{}  ",
