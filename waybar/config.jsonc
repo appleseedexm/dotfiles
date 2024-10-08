@@ -23,7 +23,8 @@
         "cpu",
         "memory",
         "clock#date",
-        "clock#time",
+        //"clock#time",
+        "custom/clock",
         "custom/right"
     ],
     "modules-right": [
@@ -61,6 +62,10 @@
         "interval": 5,
         "format": "{:%H:%M:%S}",
         "tooltip": false
+    },
+    "custom/clock": {
+        "interval": 5,
+        "exec": "date +\"%F %H:%M\""
     },
     "clock#date": {
         "interval": 20,
@@ -174,7 +179,7 @@
         "format": " {used}",
         "path": "/home",
         "tooltip": true,
-        "tooltip-format": "{used}/{total} => {path} {percentage_used}%"
+        "tooltip-forma": "{used}/{total} => {path} {percentage_used}%"
     },
     "custom/control-center": {
         "format": "⚙️",
