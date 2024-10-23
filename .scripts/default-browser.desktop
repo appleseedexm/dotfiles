@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Name=Default Browser Wrapper
+GenericName=Web Browser
+Comment=Browse the Web
+Exec=/home/asx/.scripts/default-browser.sh %u
+Icon=zen-browser
+Terminal=false
+Type=Application
+Categories=Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml+xml;x-scheme-handler/http;x-scheme-handler/https;
+StartupWMClass=Default Browser Wrapper
