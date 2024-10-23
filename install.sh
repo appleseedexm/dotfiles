@@ -15,6 +15,8 @@ source_files=(
     "$SOURCE_PATH/system/.inputrc"
     "$SOURCE_PATH/tms"
     "$SOURCE_PATH/alacritty"
+    "$SOURCE_PATH/.scripts"
+
 )
 
 dest_files=(
@@ -29,6 +31,7 @@ dest_files=(
     "$HOME/.inputrc"
     "$CONFIG_PATH/"
     "$CONFIG_PATH/"
+    "$HOME/"
 )
 
 BACKUPS_CREATED=()
