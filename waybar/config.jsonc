@@ -179,7 +179,7 @@
         "format": " {used}",
         "path": "/home",
         "tooltip": true,
-        "tooltip-forma": "{used}/{total} => {path} {percentage_used}%"
+        "tooltip-format": "{used}/{total} => {path} {percentage_used}%"
     },
     "custom/control-center": {
         "format": "⚙️",
@@ -201,7 +201,7 @@
     "custom/mic": {
         "format": "{}  ",
         "interval": "once",
-        "exec": "if [ $(wpctl status | grep 'RØDE NT-USB+' | grep -i vol | grep -c MUTED) -eq  '1' ]; then echo '󰍭'; else echo '󰍬'; fi",
+        "exec": "if [ $(sh ~/.scripts/mute.sh -o) -eq  '1' ]; then echo '󰍭'; else echo '󰍬'; fi",
         "signal": 2
     },
     "custom/dunst": {
