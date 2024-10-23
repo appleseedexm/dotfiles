@@ -16,7 +16,6 @@ source_files=(
     "$SOURCE_PATH/tms"
     "$SOURCE_PATH/alacritty"
     "$SOURCE_PATH/.scripts"
-
 )
 
 dest_files=(
@@ -35,6 +34,11 @@ dest_files=(
 )
 
 BACKUPS_CREATED=()
+
+if [ ${#source_files[@]} -ne ${#dest_files[@]} ]; then
+   echo "Error: source and destination arrays must be the same length"
+   exit 1
+fi
 
 for ((i=0;i<${#source_files[@]};i++)) do
 
