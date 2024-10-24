@@ -6,26 +6,33 @@ MICROPHONE_SOURCE_DEFAULT_VOLUME="0.75"
 
 FORCE_MUTE=false
 OUTPUT_MUTE_STATE=false
+STARTUP=false
 
-while getopts "mo" flag; do
+while getopts "mos" flag; do
     case "${flag}" in
         m) FORCE_MUTE=true ;;
         o) OUTPUT_MUTE_STATE=true ;;
+        s) STARTUP=true ;;
     esac
 done
 
 get_volume_line() {
-    wpctl status | grep "$MICROPHONE_SOURCE_NAME" | grep -i vol 
+    echo "$( wpctl status | grep "$MICROPHONE_SOURCE_NAME" | grep -i vol )"
 }
 
 is_muted() {
-      get_volume_line | grep -c "MUTED"
+    echo "$( get_volume_line | grep -c "MUTED" )"
+}
+
+waybar_sig(){
+    pkill -RTMIN+2 waybar
 }
 
 toggle_mute() {
     wpctl set-mute $MICROPHONE_SOURCE_ID toggle
     # fixing wpctl not saving volumes anymore
     wpctl set-volume $MICROPHONE_SOURCE_ID $MICROPHONE_SOURCE_DEFAULT_VOLUME
+    waybar_sig
 }
 
 dunst_notify() {
@@ -38,18 +45,46 @@ dunst_notify() {
     dunstify -a "Microphone" -u low Microphone "${DUNST_MESSAGE}" -t 1000
 }
 
+dunst_error() {
+    dunstify -a "Microphone" -u critical Microphone "${DUNST_MESSAGE_MIC_NOT_FOUND}"
+    exit 1
+}
+
+wait_for_wpctl() {
+    safety=0
+
+    while [ $(get_volume_line | grep -c "vol") -eq "0" ]; do
+        if [ $safety -gt 10 ]; then
+            dunst_error
+        fi
+
+        ((safety++))
+        sleep 1
+    done
+    
+    if [ $(is_muted) -eq "0" ]; then
+        toggle_mute
+    fi
+
+}
+
 MICROPHONE_SOURCE_ID=$(get_volume_line | grep -o -E '[0-9]+' | head -1)
 VOLUME_LINES_COUNT=$(get_volume_line | grep -c vol)
 DUNST_MESSAGE_MIC_NOT_FOUND="Source not found, unable to mute/unmute microphone."
 
 main() {
 
+    if [ $STARTUP = true ]; then
+        wait_for_wpctl
+        exit
+    fi
+
+    if [ $OUTPUT_MUTE_STATE = true ]; then
+        echo $(is_muted)
+        exit
+    fi
+
     if [ $VOLUME_LINES_COUNT -eq "1" ]; then
-        
-        if [ $OUTPUT_MUTE_STATE = true ]; then
-            echo $(is_muted)
-            exit
-        fi
 
         if [ $FORCE_MUTE = true ] && [ $(is_muted) -eq "0" ]; then
             toggle_mute
@@ -60,12 +95,10 @@ main() {
             dunst_notify
         fi
 
-        pkill -RTMIN+2 waybar
-
         exit
     fi
 
-    dunstify -a "Microphone" -u critical Microphone "${DUNST_MESSAGE_MIC_NOT_FOUND}"
+    dunst_error
 }
 
 main
