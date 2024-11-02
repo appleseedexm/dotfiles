@@ -52,6 +52,7 @@ dunst_error() {
 
 wait_for_wpctl() {
     safety=0
+    sleep 2
 
     while [ $(get_volume_line | grep -c "vol") -eq "0" ]; do
         if [ $safety -gt 10 ]; then
@@ -65,6 +66,9 @@ wait_for_wpctl() {
     if [ $(is_muted) -eq "0" ]; then
         toggle_mute
     fi
+
+    sleep 5
+    waybar_sig
 
 }
 
