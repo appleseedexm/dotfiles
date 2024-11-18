@@ -2,6 +2,7 @@
 
 # Change this line with the source's name from `wpctl status`
 MICROPHONE_SOURCE_NAME="RØDE NT-USB+"
+#MICROPHONE_SOURCE_NAME="Antlion Wireless Microphone Mono"
 MICROPHONE_SOURCE_DEFAULT_VOLUME="0.75"
 
 FORCE_MUTE=false
