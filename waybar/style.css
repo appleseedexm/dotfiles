@@ -19,6 +19,7 @@ window#waybar {
 #temperature,
 #tray,
 #custom-dunst,
+#custom-idle,
 #custom-mic,
 #battery,
 #network,
@@ -79,6 +80,12 @@ tooltip {
     color: #ebdbb2;
 }
 
+#custom-idle {
+    background-color: #405253;
+    padding: 0px 0px 0px 10px;
+    color: #ebdbb2;
+}
+
 #custom-mic {
     background-color: #405253;
     padding: 0px 0px 0px 10px;
@@ -87,7 +94,7 @@ tooltip {
 
 #custom-dunst {
     background-color: #405253;
-    padding: 0px 10px 0px 0px;
+    padding: 0px 20px 0px 10px;
     color: #ebdbb2;
     border-radius: 0px 6px 20px 0px;
 }

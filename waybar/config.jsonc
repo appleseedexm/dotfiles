@@ -15,6 +15,7 @@
         "custom/left",
         "tray",
         "custom/mic",
+        "custom/idle",
         "custom/dunst",
         "custom/right"
     ],
@@ -199,15 +200,21 @@
         "tooltip": false
     },
     "custom/mic": {
-        "format": "{}  ",
+        "format": "{}",
         "interval": "once",
         "exec": "if [ $(sh ~/.scripts/mute.sh -o) -eq  '1' ]; then echo '󰍭'; else echo '󰍬'; fi",
         "signal": 2
     },
     "custom/dunst": {
-        "format": "{}  ",
+        "format": "{}",
         "interval": "once",
-        "exec": "if [ $(dunstctl get-pause-level) -eq  '0' ]; then echo ''; else echo ''; fi",
+        "exec": "if [ $(dunstctl get-pause-level) -eq  '0' ]; then echo '󰻞'; else echo '󱋒'; fi",
         "signal": 1
+    },
+    "custom/idle": {
+        "format": "{}",
+        "interval": "once",
+        "exec": "if [ $(sh ~/.scripts/idle.sh -o) -eq  '1' ]; then echo '󰒲'; else echo '󰒳'; fi",
+        "signal": 3
     }
 }
