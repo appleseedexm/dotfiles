@@ -24,8 +24,8 @@
         "cpu",
         "memory",
         "clock#date",
-        //"clock#time",
-        "custom/clock",
+        "clock#time",
+        //"custom/clock",
         "custom/right"
     ],
     "modules-right": [
