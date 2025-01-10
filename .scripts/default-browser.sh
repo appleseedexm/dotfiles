@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# xdg-settings set default-web-browser default-browser.desktop
+
 DEFAULT_BROWSER="zen-browser"
 PROFILE=""
 
