@@ -13,7 +13,7 @@ alias nv="nvim . "
 alias paqi="paru -Qi | grep -i name"
 alias today="nvim -c ObsidianToday"
 alias cargoupdate="cargo install $(cargo install --list | egrep '^[a-z0-9_-]+ v[0-9.]+:$' | cut -f1 -d' ')"
-alias theme="sh ~/.scripts/theme.sh"
+alias theme.sh="sh ~/.scripts/theme.sh"
 if command -v exa > /dev/null; then
     alias ls="exa -l --group-directories-first"
 fi
