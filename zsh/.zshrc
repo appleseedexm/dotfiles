@@ -45,6 +45,19 @@ if command -v theme.sh > /dev/null; then
 	alias thd='theme.sh --dark -i'
 fi
 
+# ssh
+SESSION_TYPE_SSH_PREFIX="%F{red}%B[ssh]%b"
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+  SESSION_TYPE="$SESSION_TYPE_SSH_PREFIX"
+# many other tests omitted
+else
+  case $(ps -o comm= -p "$PPID") in
+    sshd|*/sshd) SESSION_TYPE="$SESSION_TYPE_SSH_PREFIX";;
+  esac
+fi
+
+PS1="$SESSION_TYPE$PS1"
+
 # fzf
 source <(fzf --zsh)
 
