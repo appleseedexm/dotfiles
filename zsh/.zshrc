@@ -3,11 +3,6 @@ export ZSH="$HOME/.oh-my-zsh"
 export EDITOR=nvim
 export ZVM_INIT_MODE=sourcing
 
-# uwsm
-if uwsm check may-start && uwsm select; then
-	exec systemd-cat -t uwsm_start uwsm start default
-fi
-
 ZSH_THEME="nanotech"
 plugins=(git gradle zsh-vi-mode)
 
