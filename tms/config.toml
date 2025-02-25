@@ -4,7 +4,6 @@ recursive_submodules = false
 excluded_dirs = ["/home/asx/code/other"]
 search_paths = [
     "$HOME/.config/nvim",
-    "$HOME/.config/ironbar",
     "$HOME/.config/hypr",
     "$HOME/code/cv",
 ]
