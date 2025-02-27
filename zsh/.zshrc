@@ -4,7 +4,7 @@ export EDITOR=nvim
 export ZVM_INIT_MODE=sourcing
 
 ZSH_THEME="nanotech"
-plugins=(git gradle zsh-vi-mode)
+plugins=(git zsh-vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
