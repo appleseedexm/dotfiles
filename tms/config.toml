@@ -6,6 +6,7 @@ search_paths = [
     "$HOME/.config/nvim",
     "$HOME/.config/hypr",
     "$HOME/code/cv",
+    "$HOME/code/microsoft",
 ]
 bookmarks = [
     "$HOME/.obsidian/default",
