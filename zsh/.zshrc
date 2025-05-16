@@ -3,12 +3,14 @@ export ZSH="$HOME/.oh-my-zsh"
 export EDITOR=nvim
 export ZVM_INIT_MODE=sourcing
 
+# Set ZSH theme and plugins
 ZSH_THEME="nanotech"
 plugins=(git zsh-vi-mode)
 
+# Source oh-my-zsh setup script
 source $ZSH/oh-my-zsh.sh
 
-# aliases
+# Aliases for common commands
 alias nv="nvim . "
 alias paqi="paru -Qi | grep -i name"
 alias today="tmux new-session 'nvim -c ObsidianToday'"
@@ -20,16 +22,16 @@ if command -v exa > /dev/null; then
     alias ls="exa -l --group-directories-first"
 fi
 
-# load private config
+# Load private configuration if it exists
 if [ -f $HOME/.shell_local ]; then
     source $HOME/.shell_local
 fi
 
-# theme.sh
+# Theme management scripts
 if command -v theme.sh > /dev/null; then
 	[ -e ~/.theme_history ] && theme.sh "$(theme.sh -l|tail -n1)"
 
-	# Optional
+	# Optional functions and aliases for theme management
 
 	# Bind C-o to the last theme.
 	last_theme() {
@@ -47,7 +49,7 @@ if command -v theme.sh > /dev/null; then
 	alias thd='theme.sh --dark -i'
 fi
 
-# ssh
+# SSH session type detection
 SESSION_TYPE_SSH_PREFIX="%F{red}%B[ssh]%b"
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
   SESSION_TYPE="$SESSION_TYPE_SSH_PREFIX"
@@ -58,19 +60,20 @@ else
   esac
 fi
 
+# Set the PS1 prompt variable to include session type
 PS1="$SESSION_TYPE$PS1"
 
-# fzf
+# Source fzf integration for zsh
 source <(fzf --zsh)
 
-# nmon
+# Configuration for nmon tool
 export NMON=cmt
 
-# zoxide
+# Zoxide configuration and initialization
 export _ZO_EXCLUDE_DIRS="$HOME:$HOME/code/other/*"
 eval "$(zoxide init zsh --cmd cd)"
 
-# nvm
+# Node version manager (nvm) setup
 if [ -s "$HOME/.nvm/nvm.sh" ]; then
   export NVM_DIR="$HOME/.nvm"
   nvm_cmds=(nvm node npm yarn)
@@ -80,12 +83,11 @@ if [ -s "$HOME/.nvm/nvm.sh" ]; then
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 fi
 
-# sdkman
+# SDKMAN initialization script
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-
-# fix oh-my-zsh edit mode
+# Fix oh-my-zsh edit mode
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '\C-x\C-e' edit-command-line
