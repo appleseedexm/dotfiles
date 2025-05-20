@@ -2,18 +2,26 @@
 
 # xdg-settings set default-web-browser default-browser.desktop
 
-DEFAULT_BROWSER="zen-browser"
+DEFAULT_BROWSER="qutebrowser"
+DEFAULT_FLAGS="--target tab --untrusted-args"
+PROFILE_WORK="-B $HOME/.local/share/qutebrowser-work"
+PROFILE_DEFAULT=""
 PROFILE=""
 
 PPPID=$(ps -p $PPID -o ppid=)
 PPPCOMMAND=$(ps -o comm= $PPPID)
 
 if [[ "$DEFAULT_BROWSER_PROFILE" == "work" ]]; then
-    PROFILE="-P work"
+    PROFILE="$PROFILE_WORK"
 fi
 
 if [[ "$PPPCOMMAND" == "foot" ]]; then
-    PROFILE="-P temp"
+    INSTANCE=$(printf "default\nwork\n" | tofi)
+
+    if [[ "$INSTANCE" == "work" ]]; then
+        PROFILE="$PROFILE_WORK"
+    fi
+
 fi
 
-$DEFAULT_BROWSER $PROFILE "$@"
+$DEFAULT_BROWSER $PROFILE $DEFAULT_FLAGS "$@"
