@@ -13,6 +13,11 @@
 # Change the argument to True to still load settings configured via autoconfig.yml
 config.load_autoconfig(False)
 
+# Time interval (in milliseconds) between auto-saves of
+# config/cookies/etc.
+# Type: Int
+c.auto_save.interval = 5000
+
 # Always restore open sites when qutebrowser is reopened. Without this
 # option set, `:wq` (`:quit --save`) needs to be used to save open tabs
 # (and restore them), while quitting qutebrowser in any other way will
@@ -21,7 +26,6 @@ config.load_autoconfig(False)
 # `session.default_name` setting.
 # Type: Bool
 c.auto_save.session = True
-c.auto_save.interval = 5000
 
 # Which cookies to accept. With QtWebEngine, this setting also controls
 # other features with tracking capabilities similar to those of cookies;
@@ -134,6 +138,15 @@ config.set('content.local_content_can_access_file_urls', False, 'file:///home/as
 #   - ask
 config.set('content.register_protocol_handler', True, 'https://outlook.live.com?mailtouri=%25s')
 
+# Allow websites to register protocol handlers via
+# `navigator.registerProtocolHandler`.
+# Type: BoolAsk
+# Valid values:
+#   - true
+#   - false
+#   - ask
+config.set('content.register_protocol_handler', True, 'https://calendar.google.com?cid=%25s')
+
 # Search engines which can be used via the address bar.  Maps a search
 # engine name (such as `DEFAULT`, or `ddg`) to a URL with a `{}`
 # placeholder. The placeholder will be replaced by the search term, use
@@ -175,7 +188,7 @@ c.colors.webpage.preferred_color_scheme = 'dark'
 # `colors.webpage.darkmode.policy.images` to `never`.  - "With selective
 # image inversion": qutebrowser default settings.
 # Type: Bool
-c.colors.webpage.darkmode.enabled = False
+c.colors.webpage.darkmode.enabled = True
 
 # Which algorithm to use for modifying how colors are rendered with dark
 # mode. The `lightness-cielab` value was added with QtWebEngine 5.14 and
