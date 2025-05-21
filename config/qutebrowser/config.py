@@ -147,6 +147,36 @@ config.set('content.register_protocol_handler', True, 'https://outlook.live.com?
 #   - ask
 config.set('content.register_protocol_handler', True, 'https://calendar.google.com?cid=%25s')
 
+# How to behave when the last tab is closed. If the
+# `tabs.tabs_are_windows` setting is set, this is ignored and the
+# behavior is always identical to the `close` value.
+# Type: String
+# Valid values:
+#   - ignore: Don't do anything.
+#   - blank: Load a blank page.
+#   - startpage: Load the start page.
+#   - default-page: Load the default page.
+#   - close: Close the window.
+c.tabs.last_close = 'close'
+
+# Position of the tab bar.
+# Type: Position
+# Valid values:
+#   - top
+#   - bottom
+#   - left
+#   - right
+c.tabs.position = 'left'
+
+# When to show the tab bar.
+# Type: String
+# Valid values:
+#   - always: Always show the tab bar.
+#   - never: Always hide the tab bar.
+#   - multiple: Hide the tab bar if only one tab is open.
+#   - switching: Show the tab bar when switching tabs.
+c.tabs.show = 'switching'
+
 # Search engines which can be used via the address bar.  Maps a search
 # engine name (such as `DEFAULT`, or `ddg`) to a URL with a `{}`
 # placeholder. The placeholder will be replaced by the search term, use
@@ -201,6 +231,7 @@ c.colors.webpage.darkmode.enabled = True
 c.colors.webpage.darkmode.algorithm = 'lightness-cielab'
 
 # Bindings for normal mode
-config.bind('<Space>saa', 'cmd-set-text :open arch ')
-config.bind('<Space>sap', 'cmd-set-text :open archpackages ')
-config.bind('<Space>sau', 'cmd-set-text :open aur ')
+config.bind('<Ctrl+p>', 'cmd-set-text -s :open -p')
+config.bind('<Space>saa', 'cmd-set-text -s :open arch')
+config.bind('<Space>sap', 'cmd-set-text -s :open archpackages')
+config.bind('<Space>sau', 'cmd-set-text -s :open aur')
