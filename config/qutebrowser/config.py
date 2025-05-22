@@ -97,6 +97,10 @@ config.set('content.headers.accept_language', '', 'https://matchmaker.krunker.io
 # Type: FormatString
 config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}; rv:136.0) Gecko/20100101 Firefox/136.0', 'https://accounts.google.com/*')
 
+# Enable the ad/host blocker
+# Type: Bool
+config.set('content.blocking.enabled', False, 'https://www.baeldung.com/*')
+
 # Which method of blocking ads should be used.  Support for Adblock Plus
 # (ABP) syntax blocklists using Brave's Rust library requires the
 # `adblock` Python package to be installed, which is an optional
