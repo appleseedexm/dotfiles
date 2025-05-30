@@ -235,7 +235,7 @@ c.colors.webpage.preferred_color_scheme = 'dark'
 # `colors.webpage.darkmode.policy.images` to `never`.  - "With selective
 # image inversion": qutebrowser default settings.
 # Type: Bool
-c.colors.webpage.darkmode.enabled = True
+c.colors.webpage.darkmode.enabled = False
 
 # Which algorithm to use for modifying how colors are rendered with dark
 # mode. The `lightness-cielab` value was added with QtWebEngine 5.14 and
