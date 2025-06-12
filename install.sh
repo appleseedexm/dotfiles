@@ -35,7 +35,7 @@ function link_folders(){
                 ln -bs ${source_absolute_path} ${TARGET_NAME}
             #process dirs
             elif [ -d ${source_absolute_path} ]; then
-                if not [ -d ${TARGET_NAME} ]; then
+                if ! [ -d ${TARGET_NAME} ]; then
                     # todo if dir exists needs backup
                     echo "Linking dir $source_absolute_path to $TARGET_NAME"
                     ln -s ${source_absolute_path} ${TARGET_NAME}
