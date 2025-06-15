@@ -20,6 +20,7 @@ source $ZSH/oh-my-zsh.sh
 # Aliases for common commands
 alias nv="nvim . "
 alias paqi="paru -Qi | grep -i name"
+alias sunshine-present=sunshine controller=disabled keyboard=disabled mouse=disabled
 alias today="tmux new-session 'nvim -c ObsidianToday'"
 alias cargoupdate="cargo install $(cargo install --list | egrep '^[a-z0-9_-]+ v[0-9.]+:$' | cut -f1 -d' ')"
 alias theme.sh="sh ~/.scripts/theme.sh"
