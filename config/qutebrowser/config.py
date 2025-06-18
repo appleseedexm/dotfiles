@@ -201,7 +201,7 @@ c.tabs.position = 'left'
 #   - never: Always hide the tab bar.
 #   - multiple: Hide the tab bar if only one tab is open.
 #   - switching: Show the tab bar when switching tabs.
-c.tabs.show = 'switching'
+c.tabs.show = 'never'
 
 # Search engines which can be used via the address bar.  Maps a search
 # engine name (such as `DEFAULT`, or `ddg`) to a URL with a `{}`
@@ -258,6 +258,7 @@ c.colors.webpage.darkmode.algorithm = 'lightness-cielab'
 
 # Bindings for normal mode
 config.bind('<Ctrl+Space>', 'mode-enter passthrough')
+config.bind('<Ctrl+e>', 'config-cycle tabs.show always never')
 config.bind('<Ctrl+p>', 'cmd-set-text -s :open -p')
 config.bind('<Space>saa', 'cmd-set-text -s :open arch')
 config.bind('<Space>sap', 'cmd-set-text -s :open archpackages')
