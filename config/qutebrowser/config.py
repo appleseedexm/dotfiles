@@ -164,6 +164,15 @@ config.set('content.register_protocol_handler', True, 'https://outlook.live.com?
 #   - ask
 config.set('content.register_protocol_handler', True, 'https://calendar.google.com?cid=%25s')
 
+# Editor (and arguments) to use for the `edit-*` commands. The following
+# placeholders are defined:  * `{file}`: Filename of the file to be
+# edited. * `{line}`: Line in which the caret is found in the text. *
+# `{column}`: Column in which the caret is found in the text. *
+# `{line0}`: Same as `{line}`, but starting from index 0. * `{column0}`:
+# Same as `{column}`, but starting from index 0.
+# Type: ShellCommand
+c.editor.command = ['foot', '-e', 'nvim', '{file}']
+
 # How to behave when the last tab is closed. If the
 # `tabs.tabs_are_windows` setting is set, this is ignored and the
 # behavior is always identical to the `close` value.
@@ -248,8 +257,8 @@ c.colors.webpage.darkmode.enabled = False
 c.colors.webpage.darkmode.algorithm = 'lightness-cielab'
 
 # Bindings for normal mode
+config.bind('<Ctrl+Space>', 'mode-enter passthrough')
 config.bind('<Ctrl+p>', 'cmd-set-text -s :open -p')
-config.bind('<Space><Space>', 'mode-enter passthrough')
 config.bind('<Space>saa', 'cmd-set-text -s :open arch')
 config.bind('<Space>sap', 'cmd-set-text -s :open archpackages')
 config.bind('<Space>sau', 'cmd-set-text -s :open aur')
@@ -258,10 +267,10 @@ config.bind('<Space>syt', 'cmd-set-text -s :open youtube')
 config.bind('M', 'hint links spawn mpv {hint-url}')
 
 # Bindings for caret mode
-config.bind('<Space><Space>', 'mode-leave', mode='caret')
+config.bind('<Ctrl+Space>', 'mode-leave', mode='caret')
 
 # Bindings for insert mode
-config.bind('<Space><Space>', 'mode-leave', mode='insert')
+config.bind('<Ctrl+Space>', 'mode-leave', mode='insert')
 
 # Bindings for passthrough mode
-config.bind('<Space><Space>', 'mode-leave', mode='passthrough')
+config.bind('<Ctrl+Space>', 'mode-leave', mode='passthrough')
