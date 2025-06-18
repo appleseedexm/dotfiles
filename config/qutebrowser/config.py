@@ -213,7 +213,7 @@ c.tabs.show = 'switching'
 # the search engine name to the search term, e.g. `:open google
 # qutebrowser`.
 # Type: Dict
-c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}', 'aur': 'https://aur.archlinux.org/packages?K={}', 'arch': 'https://wiki.archlinux.org/index.php?search={}', 'archpackages': 'https://archlinux.org/packages/?q={}', 'youtube': 'https://www.youtube.com/results?search_query={}'}
+c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}', 'aur': 'https://aur.archlinux.org/packages?K={}', 'arch': 'https://wiki.archlinux.org/index.php?search={}', 'archpackages': 'https://archlinux.org/packages/?q={}', 'youtube': 'https://www.youtube.com/results?search_query={}', 'github': 'https://github.com/search?q={}'}
 
 # Value to use for `prefers-color-scheme:` for websites. The "light"
 # value is only available with QtWebEngine 5.15.2+. On older versions,
@@ -249,8 +249,19 @@ c.colors.webpage.darkmode.algorithm = 'lightness-cielab'
 
 # Bindings for normal mode
 config.bind('<Ctrl+p>', 'cmd-set-text -s :open -p')
+config.bind('<Space><Space>', 'mode-enter passthrough')
 config.bind('<Space>saa', 'cmd-set-text -s :open arch')
 config.bind('<Space>sap', 'cmd-set-text -s :open archpackages')
 config.bind('<Space>sau', 'cmd-set-text -s :open aur')
+config.bind('<Space>sgh', 'cmd-set-text -s :open github')
 config.bind('<Space>syt', 'cmd-set-text -s :open youtube')
 config.bind('M', 'hint links spawn mpv {hint-url}')
+
+# Bindings for caret mode
+config.bind('<Space><Space>', 'mode-leave', mode='caret')
+
+# Bindings for insert mode
+config.bind('<Space><Space>', 'mode-leave', mode='insert')
+
+# Bindings for passthrough mode
+config.bind('<Space><Space>', 'mode-leave', mode='passthrough')
