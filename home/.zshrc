@@ -1,4 +1,4 @@
-export PATH=$HOME/bin:/usr/local/bin:$HOME/.cargo/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$HOME/.cargo/bin:$HOME/.local/bin:$PATH
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR=nvim
 export ZVM_INIT_MODE=sourcing
