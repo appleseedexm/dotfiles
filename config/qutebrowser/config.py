@@ -13,6 +13,30 @@
 # Change the argument to True to still load settings configured via autoconfig.yml
 config.load_autoconfig(False)
 
+# Use recommended page lifecycle state. This puts webpages into one of
+# three lifecycle states: active, frozen, or discarded. Using the
+# recommended lifecycle state lets the browser use less resources by
+# freezing or discarding web views when it's safe to do so. This results
+# in significant battery life savings. Ongoing page activity is taken
+# into account when determining the recommended lifecycle state, as to
+# not disrupt your browsing. This feature is only available on
+# QtWebEngine 6.5+. On older versions this setting is ignored. See the
+# Qt documentation for more details: https://doc.qt.io/qt-6/qtwebengine-
+# features.html#page-lifecycle-api
+# Type: Bool
+c.qt.chromium.use_recommended_page_lifecycle_state = True
+
+# The amount of time (in milliseconds) to wait before transitioning a
+# page to the frozen lifecycle state.
+# Type: Int
+c.qt.chromium.lifecycle_state_freeze_delay = 120000
+
+# The amount of time (in milliseconds) to wait before transitioning a
+# page to the discarded lifecycle state. Set to -1 to disable this
+# state.
+# Type: Int
+c.qt.chromium.lifecycle_state_discard_delay = 300000
+
 # Time interval (in milliseconds) between auto-saves of
 # config/cookies/etc.
 # Type: Int
@@ -163,6 +187,11 @@ config.set('content.register_protocol_handler', True, 'https://outlook.live.com?
 #   - false
 #   - ask
 config.set('content.register_protocol_handler', True, 'https://calendar.google.com?cid=%25s')
+
+# Duration (in milliseconds) to wait before removing finished downloads.
+# If set to -1, downloads are never removed.
+# Type: Int
+c.downloads.remove_finished = 30000
 
 # Editor (and arguments) to use for the `edit-*` commands. The following
 # placeholders are defined:  * `{file}`: Filename of the file to be
