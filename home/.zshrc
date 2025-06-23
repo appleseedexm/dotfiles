@@ -12,7 +12,7 @@ export XDG_CONFIG_DIRS="/etc/xdg"
 
 # Set ZSH theme and plugins
 ZSH_THEME="nanotech"
-plugins=(git zsh-vi-mode)
+plugins=(git zsh-vi-mode zsh-syntax-highlighting)
 
 # Source oh-my-zsh setup script
 source $ZSH/oh-my-zsh.sh

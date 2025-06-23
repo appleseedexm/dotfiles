@@ -6,7 +6,10 @@ Currently a very minimal version control of my dotfiles. Keep in mind that my ma
 
 fzf
 zoxide
+
+### zsh
 zsh-vi-mode
+zsh-syntax-highlighting
 
 ## Optional
 
