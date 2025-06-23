@@ -11,7 +11,7 @@ export XDG_DATA_DIRS="/usr/local/share:/usr/share"
 export XDG_CONFIG_DIRS="/etc/xdg"
 
 # Set ZSH theme and plugins
-ZSH_THEME="nanotech"
+ZSH_THEME="ys"
 plugins=(git zsh-vi-mode zsh-syntax-highlighting)
 
 # Source oh-my-zsh setup script
@@ -99,6 +99,12 @@ export SDKMAN_DIR="$HOME/.sdkman"
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '\C-x\C-e' edit-command-line
+
+# Auto-complete use vim bindings
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
 
 # zsh vi mode clipboard support
 alias cbread='clipcopy'
