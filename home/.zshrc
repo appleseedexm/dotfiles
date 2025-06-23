@@ -106,6 +106,17 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 
+# Yazi shorthand to cd
+function yy() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+                zle reset-prompt
+	fi
+	rm -f -- "$tmp"
+}
+
 # zsh vi mode clipboard support
 alias cbread='clipcopy'
 alias cbprint='clippaste'
