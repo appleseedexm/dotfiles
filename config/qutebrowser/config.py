@@ -289,11 +289,11 @@ c.colors.webpage.darkmode.algorithm = 'lightness-cielab'
 config.bind('<Ctrl+Space>', 'mode-enter passthrough')
 config.bind('<Ctrl+e>', 'config-cycle tabs.show always never')
 config.bind('<Ctrl+p>', 'cmd-set-text -s :open -p')
-config.bind('<Space>saa', 'cmd-set-text -s :open arch')
-config.bind('<Space>sap', 'cmd-set-text -s :open archpackages')
-config.bind('<Space>sau', 'cmd-set-text -s :open aur')
-config.bind('<Space>sgh', 'cmd-set-text -s :open github')
-config.bind('<Space>syt', 'cmd-set-text -s :open youtube')
+config.bind('<Space>saa', 'cmd-set-text -s :open -t arch')
+config.bind('<Space>sap', 'cmd-set-text -s :open -t archpackages')
+config.bind('<Space>sau', 'cmd-set-text -s :open -t aur')
+config.bind('<Space>sgh', 'cmd-set-text -s :open -t github')
+config.bind('<Space>syt', 'cmd-set-text -s :open -t youtube')
 config.bind('M', 'hint links spawn mpv {hint-url}')
 
 # Bindings for caret mode
