@@ -24,7 +24,7 @@ alias sunshine-present=sunshine controller=disabled keyboard=disabled mouse=disa
 alias today="tmux new-session 'nvim -c ObsidianToday'"
 alias cargoupdate="cargo install $(cargo install --list | egrep '^[a-z0-9_-]+ v[0-9.]+:$' | cut -f1 -d' ')"
 alias theme.sh="sh ~/.scripts/theme.sh"
-alias agt="amdgpu_top"
+alias agt="amdgpu_top --dark"
 alias f="fd --type f -H | fzf | sed 's/\ /\\\ /g' | xargs nvim"
 if command -v exa > /dev/null; then
     alias ls="exa -l --group-directories-first"
