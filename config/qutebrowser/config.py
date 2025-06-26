@@ -36,6 +36,10 @@ c.qt.chromium.lifecycle_state_freeze_delay = 120000
 # state.
 # Type: Int
 c.qt.chromium.lifecycle_state_discard_delay = 300000
+# Additional environment variables to set. Setting an environment
+# variable to null/None will unset it.
+# Type: Dict
+c.qt.environ = {'NODE_PATH': '/usr/lib/node_modules'}
 
 # Time interval (in milliseconds) between auto-saves of
 # config/cookies/etc.
@@ -289,6 +293,7 @@ c.colors.webpage.darkmode.algorithm = 'lightness-cielab'
 config.bind('<Ctrl+Space>', 'mode-enter passthrough')
 config.bind('<Ctrl+e>', 'config-cycle tabs.show always never')
 config.bind('<Ctrl+p>', 'cmd-set-text -s :open -p')
+config.bind('<Space>r', 'spawn --userscript readability-js')
 config.bind('<Space>saa', 'cmd-set-text -s :open -t arch')
 config.bind('<Space>sap', 'cmd-set-text -s :open -t archpackages')
 config.bind('<Space>sau', 'cmd-set-text -s :open -t aur')
