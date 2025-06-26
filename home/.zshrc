@@ -84,7 +84,7 @@ eval "$(zoxide init zsh --cmd cd)"
 # Node version manager (nvm) setup
 if [ -s "$HOME/.nvm/nvm.sh" ]; then
   export NVM_DIR="$HOME/.nvm"
-  nvm_cmds=(nvm node npm yarn)
+  nvm_cmds=(nvm node npm yarn pnpm)
   for cmd in $nvm_cmds ; do
     alias $cmd="unalias $nvm_cmds && unset nvm_cmds && . $NVM_DIR/nvm.sh && $cmd"
   done
