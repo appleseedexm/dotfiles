@@ -1,3 +1,5 @@
+@define-color foreground #38ef7d;
+
 * {
     border: none;
     border-radius: 0px;
@@ -56,12 +58,12 @@ tooltip {
     margin-bottom: 3px;
     padding-left: 3px;
     padding-right: 3px;
-    color: #d5c4a1;
+    color: @foreground;
 }
 
 #workspaces button.active {
-    color: #FDE6D5;
-    border-bottom: 1px solid #FDE6D5;
+    color: @foreground;
+    border-bottom: 1px solid @foreground;
 }
 
 #workspaces {
@@ -83,28 +85,28 @@ tooltip {
     /*background-color: #405253;*/
     background: none;
     border-radius: 20px 0px 0px 6px;
-    color: #ebdbb2;
+    color: @foreground;
 }
 
 #custom-idle {
     /*background-color: #405253;*/
     background: none;
     padding: 0px 0px 0px 10px;
-    color: #ebdbb2;
+    color: @foreground;
 }
 
 #custom-mic {
     /*background-color: #405253;*/
     background: none;
     padding: 0px 0px 0px 10px;
-    color: #ebdbb2;
+    color: @foreground;
 }
 
 #custom-dunst {
     /*background-color: #405253;*/
     background: none;
     padding: 0px 20px 0px 10px;
-    color: #ebdbb2;
+    color: @foreground;
     border-radius: 0px 6px 20px 0px;
 }
 
@@ -112,13 +114,13 @@ tooltip {
     /*background-color: #405253;*/
     background: none;
     border-radius: 0px 6px 20px 0px;
-    color: #ebdbb2;
+    color: @foreground;
 }
 
 #cpu {
     /*background-color: #286076;*/
     background: none;
-    color: #ebdbb2;
+    color: @foreground;
     padding: 0px 0px 0px 14px;
     border-radius: 20px 0px 0px 6px;
 }
@@ -126,7 +128,7 @@ tooltip {
 #clock, #custom-clock {
     /*background-color: #286076;*/
     background: none;
-    color: #ebdbb2;
+    color: @foreground;
 }
 
 #clock.date {
@@ -141,14 +143,14 @@ tooltip {
 #memory {
     /*background-color: #286076;*/
     background: none;
-    color: #ebdbb2;
+    color: @foreground;
     border-radius: 0px 0px 0px 0px;
 }
 
 #temperature {
     /*background-color: #286076;*/
     background: none;
-    color: #ebdbb2;
+    color: @foreground;
     border-radius: 0px 6px 20px 0px;
 }
 
@@ -168,7 +170,7 @@ tooltip {
     background: none;
     border-radius: 20px 6px 20px 6px;
     padding: 0px 14px 0px 14px;
-    color: #ebdbb2;
+    color: @foreground;
 }
 
 #battery {
@@ -183,7 +185,7 @@ tooltip {
     padding: 0px 14px 0px 14px;
     /*background-color: #5E2A7C;*/
     background: none;
-    color: #FDE6D5;
+    color: @foreground;
 }
 
 #network * {
@@ -195,5 +197,5 @@ tooltip {
     /*background-color: #C53C2C;*/
     background: none;
     border-radius: 20px 6px 20px 6px;
-    color: #FDE5D4;
+    color: @foreground;
 }
