@@ -301,6 +301,8 @@ c.colors.webpage.darkmode.algorithm = 'lightness-cielab'
 config.bind('<Ctrl+Space>', 'mode-enter passthrough')
 config.bind('<Ctrl+e>', 'config-cycle tabs.show always never')
 config.bind('<Ctrl+p>', 'cmd-set-text -s :open -p')
+config.bind('<Space>ccs', 'config-source config.py')
+config.bind('<Space>ccw', 'config-write-py config.py --force')
 config.bind('<Space>r', 'spawn --userscript readability-js')
 config.bind('<Space>saa', 'cmd-set-text -s :open -t arch')
 config.bind('<Space>sap', 'cmd-set-text -s :open -t archpackages')
