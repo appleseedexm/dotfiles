@@ -297,6 +297,23 @@ c.colors.webpage.darkmode.enabled = False
 #   - brightness-rgb: Modify colors by subtracting each of r, g, and b from their maximum value.
 c.colors.webpage.darkmode.algorithm = 'lightness-cielab'
 
+# Default font families to use. Whenever "default_family" is used in a
+# font setting, it's replaced with the fonts listed here. If set to an
+# empty value, a system-specific monospace default is used.
+# Type: List of Font, or Font
+c.fonts.default_family = 'TerminessNerdFont'
+
+# Default font size to use. Whenever "default_size" is used in a font
+# setting, it's replaced with the size listed here. Valid values are
+# either a float value with a "pt" suffix, or an integer value with a
+# "px" suffix.
+# Type: String
+c.fonts.default_size = '12pt'
+
+# Font used for the hints.
+# Type: Font
+c.fonts.hints = 'bold 12pt default_family'
+
 # Bindings for normal mode
 config.bind('<Ctrl+Space>', 'mode-enter passthrough')
 config.bind('<Ctrl+e>', 'config-cycle tabs.show always never')
