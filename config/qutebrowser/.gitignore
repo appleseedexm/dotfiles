@@ -2,3 +2,5 @@ quickmarks
 bookmarks/urls
 autoconfig.yml
 qsettings/QtProject.conf
+load-configs.py
+work.py
