@@ -26,8 +26,11 @@ alias cargoupdate="cargo install $(cargo install --list | egrep '^[a-z0-9_-]+ v[
 alias theme.sh="sh ~/.scripts/theme.sh"
 alias agt="amdgpu_top --dark"
 alias f="fd --type f -H | fzf | sed 's/\ /\\\ /g' | xargs nvim"
+alias o="xdg-open"
+
 if command -v exa > /dev/null; then
     alias ls="exa -l --group-directories-first"
+    alias ld="l --sort date"
 fi
 
 # Load private configuration if it exists
