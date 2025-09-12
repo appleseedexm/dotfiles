@@ -2,7 +2,8 @@
 [terminal.shell]
 program = "/usr/bin/zsh"
 [font]
-size = 6.0
+normal.family = "Terminess Nerd Font Mono"
+size = 10.0
 
 [general]
 import = [
