@@ -206,6 +206,7 @@ exec --no-startup-id i3-msg 'workspace $ws10'
 exec --no-startup-id obsidian
 exec --no-startup-id dunst
 
+exec --no-startup-id xrandr --dpi 200
 exec --no-startup-id xrandr --newmode "3440x1440_74.99"  533.79  3440 3712 4088 4736  1440 1441 1444 1503  -HSync +Vsync
 exec --no-startup-id xrandr --addmode Virtual-1 3440x1440_74.99
 
