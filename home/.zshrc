@@ -17,6 +17,11 @@ plugins=(git zsh-vi-mode zsh-syntax-highlighting)
 # Source oh-my-zsh setup script
 source $ZSH/oh-my-zsh.sh
 
+# ripgrep in dir and pipe to nvim
+function rg_fzf_nvim(){
+  rg $1 | fzf | egrep -o '^[^:]+' | xargs nvim
+}
+
 # Aliases for common commands
 alias nv="nvim . "
 alias paqi="paru -Qi | grep -i name"
@@ -26,6 +31,7 @@ alias cargoupdate="cargo install $(cargo install --list | egrep '^[a-z0-9_-]+ v[
 alias theme.sh="sh ~/.scripts/theme.sh"
 alias agt="amdgpu_top --dark"
 alias f="fd --type f -H | fzf | sed 's/\ /\\\ /g' | xargs nvim"
+alias s="rg_fzf_nvim"
 alias o="xdg-open"
 
 if command -v exa > /dev/null; then
