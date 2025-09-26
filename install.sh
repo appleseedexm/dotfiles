@@ -61,6 +61,7 @@ function link_folders(){
 
 link_folders $SOURCE_PATH/config $XDG_CONFIG_HOME
 link_folders $SOURCE_PATH/home $HOME
+link_folders $SOURCE_PATH/applications $XDG_DATA_HOME/applications
 
 limiter
 
