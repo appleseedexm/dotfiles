@@ -33,6 +33,7 @@ alias agt="amdgpu_top --dark"
 alias f="fd --type f -H | fzf | sed 's/\ /\\\ /g' | xargs nvim"
 alias s="rg_fzf_nvim"
 alias o="xdg-open"
+alias q="$HOME/.scripts/default-browser.sh"
 
 if command -v exa > /dev/null; then
     alias ls="exa -l --group-directories-first"
