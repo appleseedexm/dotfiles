@@ -395,7 +395,8 @@ binds {
     Mod+M { spawn-sh "sh $HOME/.scripts/mute.sh"; }
     Mod+Shift+M { spawn-sh "sh $HOME/.scripts/dnd.sh"; }
     Mod+Shift+N { spawn-sh "sh $HOME/.scripts/idle.sh"; } 
-    Mod+Shift+O { spawn-sh "sh $XDG_CONFIG_HOME/niri/focus_window.sh"; } 
+    Mod+Shift+O { spawn-sh "sh $XDG_CONFIG_HOME/niri/focus_window.sh"; }
+    Mod+Ctrl+O { spawn-sh "sh $XDG_CONFIG_HOME/niri/fetch_window.sh"; }
     Mod+G { spawn "cartridges"; }
 
 // # window 
