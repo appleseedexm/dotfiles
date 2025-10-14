@@ -300,6 +300,9 @@ spawn-sh-at-startup "wl-paste --type text --watch cliphist store"  //Stores only
 spawn-sh-at-startup "wl-paste --type image --watch cliphist store" //Stores only image data
 
 spawn-sh-at-startup "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'" // for GTK4 apps
+spawn-sh-at-startup "niri msg action focus-workspace coms"
+spawn-sh-at-startup "niri msg action focus-workspace one"
+
 
 
 // miscellaneous 
@@ -559,21 +562,21 @@ binds {
     //
     // For example, with 2 workspaces + 1 empty, indices 3, 4, 5 and so on
     // will all refer to the 3rd workspace.
-    Mod+1 { focus-workspace "1"; }
-    Mod+2 { focus-workspace "2"; }
-    Mod+3 { focus-workspace "3"; }
-    Mod+4 { focus-workspace "4"; }
-    Mod+5 { focus-workspace "5"; }
+    Mod+1 { focus-workspace "one"; }
+    Mod+2 { focus-workspace "two"; }
+    Mod+3 { focus-workspace "three"; }
+    Mod+4 { focus-workspace "four"; }
+    Mod+5 { focus-workspace "five"; }
     Mod+6 { focus-workspace "gaming"; }
     Mod+7 { focus-workspace "coms"; }
     Mod+8 { focus-workspace 8; }
     Mod+9 { focus-workspace 9; }
     Mod+0 { focus-workspace "startup"; }
-    Mod+Ctrl+1 { move-column-to-workspace focus=false "1"; }
-    Mod+Ctrl+2 { move-column-to-workspace focus=false "2"; }
-    Mod+Ctrl+3 { move-column-to-workspace focus=false "3"; }
-    Mod+Ctrl+4 { move-column-to-workspace focus=false "4"; }
-    Mod+Ctrl+5 { move-column-to-workspace focus=false "5"; }
+    Mod+Ctrl+1 { move-column-to-workspace focus=false "one"; }
+    Mod+Ctrl+2 { move-column-to-workspace focus=false "two"; }
+    Mod+Ctrl+3 { move-column-to-workspace focus=false "three"; }
+    Mod+Ctrl+4 { move-column-to-workspace focus=false "four"; }
+    Mod+Ctrl+5 { move-column-to-workspace focus=false "five"; }
     Mod+Ctrl+6 { move-column-to-workspace focus=false "gaming"; }
     Mod+Ctrl+7 { move-column-to-workspace focus=false "coms"; }
     Mod+Ctrl+8 { move-column-to-workspace focus=false 8; }
@@ -703,16 +706,29 @@ window-rule {
     open-fullscreen true
 }
 
-workspace "1" { }
-workspace "2" { }
-workspace "3" { }
-workspace "4" { }
-workspace "5" { }
+workspace "one" {
+    open-on-output "DP-1"
+}
+workspace "two" {
+    open-on-output "DP-1"
+}
+workspace "three" {
+    open-on-output "DP-1"
+}
+workspace "four" {
+    open-on-output "DP-1"
+}
+workspace "five" {
+    open-on-output "DP-1"
+}
+
 // workspaces
 workspace "coms"{
     open-on-output "DP-2"
 }
-workspace "gaming" { }
+workspace "gaming" {
+    open-on-output "DP-1"
+}
 workspace "startup" {
     open-on-output "DP-2"
 }
