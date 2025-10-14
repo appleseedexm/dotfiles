@@ -276,35 +276,6 @@ layout {
     }
 }
 
-// Add lines like this to spawn processes at startup.
-// Note that running niri as a session supports xdg-desktop-autostart,
-// which may be more convenient to use.
-// See the binds section below for more spawn examples.
-// To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
-// spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
-//################################################################################
-// autostart
-
-spawn-at-startup "waybar"
-spawn-sh-at-startup "hyprpaper"
-spawn-sh-at-startup "sh $XDG_CONFIG_HOME/niri/idle.sh"
-spawn-sh-at-startup "sh $XDG_CONFIG_HOME/niri/lock.sh"
-spawn-sh-at-startup "sh $HOME/.scripts/mute.sh -s"
-
-spawn-sh-at-startup "easyeffects --gapplication-service"
-spawn-sh-at-startup "proton-pass"
-spawn-sh-at-startup "obsidian"
-spawn-sh-at-startup "tidal-hifi"
-
-spawn-sh-at-startup "wl-paste --type text --watch cliphist store"  //Stores only text data
-spawn-sh-at-startup "wl-paste --type image --watch cliphist store" //Stores only image data
-
-spawn-sh-at-startup "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'" // for GTK4 apps
-spawn-sh-at-startup "niri msg action focus-workspace coms"
-spawn-sh-at-startup "niri msg action focus-workspace one"
-
-
-
 // miscellaneous 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
@@ -401,14 +372,6 @@ binds {
     Mod+Shift+O { spawn-sh "sh $XDG_CONFIG_HOME/niri/focus_window.sh"; }
     Mod+Ctrl+O { spawn-sh "sh $XDG_CONFIG_HOME/niri/fetch_window.sh"; }
     Mod+G { spawn "cartridges"; }
-
-// # window 
-// bind = $mainMod, X, movecurrentworkspacetomonitor, DP-2 // todo
-// bind = $mainMod, C, movecurrentworkspacetomonitor, DP-1 // todo
-// bind = $mainMod SHIFT, R, togglesplit // todo 
-// bind = $mainMod SHIFT, T, exec, hyprctl setprop active opaque toggle // todo
-
-
 
     // Mod-Shift-/, which is usually the same as Mod-?,
     // shows a list of important hotkeys.
@@ -732,3 +695,24 @@ workspace "gaming" {
 workspace "startup" {
     open-on-output "DP-2"
 }
+
+// autostart
+
+spawn-at-startup "waybar"
+spawn-sh-at-startup "hyprpaper"
+spawn-sh-at-startup "sh $XDG_CONFIG_HOME/niri/idle.sh"
+spawn-sh-at-startup "sh $XDG_CONFIG_HOME/niri/lock.sh"
+spawn-sh-at-startup "sh $HOME/.scripts/mute.sh -s"
+spawn-sh-at-startup "swaylock -f"
+
+spawn-sh-at-startup "easyeffects --gapplication-service"
+spawn-sh-at-startup "proton-pass"
+spawn-sh-at-startup "obsidian"
+
+spawn-sh-at-startup "wl-paste --type text --watch cliphist store"  //Stores only text data
+spawn-sh-at-startup "wl-paste --type image --watch cliphist store" //Stores only image data
+
+spawn-sh-at-startup "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'" // for GTK4 apps
+
+spawn-sh-at-startup "niri msg action focus-workspace coms"
+spawn-sh-at-startup "niri msg action focus-workspace one"
