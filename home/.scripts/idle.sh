@@ -1,4 +1,5 @@
-CMD="hypridle"
+CMD="swayidle"
+CMD_EXEC="sh $XDG_CONFIG_HOME/niri/idle.sh"
 
 OUTPUT_IDLE_RUN_STATE=false
 
@@ -29,7 +30,7 @@ main() {
     fi
 
     if is_not_running; then
-        "${CMD}" &>/dev/null & disown;
+        ${CMD_EXEC} &>/dev/null & disown;
     else
         pkill "${CMD}"
     fi
