@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 /usr/bin/swayidle -w \
     timeout 305 'niri msg action power-off-monitors' \
     timeout 300 'sh $HOME/.scripts/mute.sh -s' \
