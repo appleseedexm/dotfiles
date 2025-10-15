@@ -9,8 +9,9 @@
     "gtk-layer-shell": true,
     "modules-left": [
         "custom/left",
-        "hyprland/window",
-        "hyprland/workspaces",
+        "custom/arch",
+        // "niri/window",
+        "niri/workspaces",
         "custom/right",
         "custom/left",
         "tray",
@@ -50,14 +51,15 @@
         "interval": 2,
         "on-click-right": "~/.config/waybar/network.py"
     },
-    "hyprland/window": {
-        "format": "  ",
+    "niri/window": {
+        "format": "",
         "separate-outputs": true
     },
-    "hyprland/workspaces": {
+    "niri/workspaces": {
         "disable-scroll": true,
         "all-outputs": false,
-        "on-click": "activate"
+        "on-click": "activate",
+        "format": "{index}"
     },
     "clock#time": {
         "interval": 5,
@@ -187,6 +189,9 @@
         "on-click": "~/.config/eww/scripts/toggle_control_center.sh",
         "interval": 86400, // once every day
         "tooltip": true
+    },
+    "custom/arch":{
+        "format": "  "
     },
     // modules for padding //
     "custom/left": {

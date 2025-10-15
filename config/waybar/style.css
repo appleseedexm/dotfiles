@@ -23,6 +23,7 @@ window#waybar {
 #memory,
 #temperature,
 #tray,
+#custom-arch,
 #custom-dunst,
 #custom-idle,
 #custom-mic,
@@ -62,7 +63,7 @@ tooltip {
     color: @foreground;
 }
 
-#workspaces button.visible {
+#workspaces button.active {
     color: @foreground;
     border-bottom: 1px solid @foreground;
 }
@@ -74,7 +75,7 @@ tooltip {
     border-radius: 0px 6px 20px 0px;
 }
 
-#window {
+#window, #custom-arch {
     /*background-color: #082C6C;*/
     background: none;
     border-radius: 20px 0px 0px 6px;
