@@ -367,7 +367,7 @@ binds {
 
     Mod+S { spawn-sh "grimshot copy area"; }
     Mod+Shift+S { spawn-sh "grimshot save area"; }
-    Mod+Shift+CTRL+P { spawn-sh "swaylock -f"; }
+    Mod+Shift+CTRL+P { spawn-sh "swaylock -f -C $XDG_CONFIG_HOME/swaylock/config"; }
     Mod+M { spawn-sh "sh $HOME/.scripts/mute.sh"; }
     Mod+Shift+M { spawn-sh "sh $HOME/.scripts/dnd.sh"; }
     Mod+Shift+N { spawn-sh "sh $HOME/.scripts/idle.sh"; } 
@@ -705,7 +705,7 @@ spawn-sh-at-startup "hyprpaper"
 spawn-sh-at-startup "sh $XDG_CONFIG_HOME/niri/idle.sh"
 spawn-sh-at-startup "sh $XDG_CONFIG_HOME/niri/lock.sh"
 spawn-sh-at-startup "sh $HOME/.scripts/mute.sh -s"
-spawn-sh-at-startup "swaylock -f"
+spawn-sh-at-startup "swaylock -f -C $XDG_CONFIG_HOME/swaylock/config"
 
 spawn-sh-at-startup "easyeffects --gapplication-service"
 spawn-sh-at-startup "proton-pass"
