@@ -711,8 +711,8 @@ spawn-sh-at-startup "easyeffects --gapplication-service"
 spawn-sh-at-startup "proton-pass"
 spawn-sh-at-startup "obsidian"
 
-spawn-sh-at-startup "wl-paste --type text --watch cliphist store"  //Stores only text data
-spawn-sh-at-startup "wl-paste --type image --watch cliphist store" //Stores only image data
+// spawn-sh-at-startup "wl-paste --type text --watch cliphist store"  //Stores only text data
+// spawn-sh-at-startup "wl-paste --type image --watch cliphist store" //Stores only image data
 
 spawn-sh-at-startup "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'" // for GTK4 apps
 
