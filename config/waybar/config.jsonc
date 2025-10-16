@@ -3,14 +3,13 @@
     "layer": "top",
     "position": "top",
     //"mod": "dock",
-    "height": 10,
+    "height": 30,
     "exclusive": true,
     "passthrough": false,
     "gtk-layer-shell": true,
     "modules-left": [
         "custom/left",
         "custom/arch",
-        // "niri/window",
         "niri/workspaces",
         "custom/right",
         "custom/left",
@@ -22,9 +21,8 @@
     ],
     "modules-center": [
         "custom/left",
-        "clock#date",
-        "clock#time",
         //"custom/clock",
+        "niri/window",
         "custom/right"
     ],
     "modules-right": [
@@ -32,12 +30,11 @@
         "cpu",
         "memory",
         "network",
-        "custom/right",
-        "custom/left",
-        "backlight",
         "disk",
         "custom/right",
         "custom/left",
+        "clock#date",
+        "clock#time",
         "custom/right"
     ],
     "network": {
@@ -52,7 +49,7 @@
         "on-click-right": "~/.config/waybar/network.py"
     },
     "niri/window": {
-        "format": "",
+        "format": "{title}",
         "separate-outputs": true
     },
     "niri/workspaces": {
