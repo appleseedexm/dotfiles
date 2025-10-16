@@ -63,7 +63,7 @@ tooltip {
     color: @foreground;
 }
 
-#workspaces button.active {
+#workspaces button.focused {
     color: @foreground;
     border-bottom: 1px solid @foreground;
 }
