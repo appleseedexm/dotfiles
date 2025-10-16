@@ -122,12 +122,6 @@ binds {
     Mod+Return hotkey-overlay-title="Open a Terminal: foot" { spawn "foot"; }
     Mod+D hotkey-overlay-title="Run an Application: tofi" { spawn-sh "tofi-drun --drun-launch=true"; }
 
-    // misc
-    Mod+Shift+Slash { show-hotkey-overlay; }
-    Super+Ctrl+Shift+P hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
-    Mod+O repeat=false { toggle-overview; }
-    Mod+Shift+Q repeat=false { close-window; }
-
     // system
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
@@ -269,6 +263,14 @@ binds {
 
     Mod+Shift+E { quit; }
     Ctrl+Alt+Delete { quit; }
+
+    Mod+Shift+Slash { show-hotkey-overlay; }
+    Super+Ctrl+Shift+P hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
+    Mod+O repeat=false { toggle-overview; }
+    Mod+Shift+Q repeat=false { close-window; }
+
+    Mod+Ctrl+W { spawn-sh "niri msg output DP-1 scale 2"; }
+    Mod+Ctrl+S { spawn-sh "niri msg output DP-1 scale 1"; }
 }
 
 window-rule {
