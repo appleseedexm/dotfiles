@@ -285,9 +285,14 @@ window-rule {
     block-out-from "screencast"
 }
 window-rule {
+    match app-id="obsidian"
+
+    open-on-workspace "startup"
+    block-out-from "screencast"
+}
+window-rule {
     match app-id="Proton Pass"
 
-    open-fullscreen true
     open-on-workspace "startup"
     block-out-from "screencast"
 }
