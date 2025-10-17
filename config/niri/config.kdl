@@ -259,15 +259,15 @@ binds {
     Alt+Print { screenshot-window; }
 
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
-    Mod+Shift+P { power-off-monitors; }
 
     Mod+Shift+E { quit; }
     Ctrl+Alt+Delete { quit; }
 
     Mod+Shift+Slash { show-hotkey-overlay; }
-    Super+Ctrl+Shift+P hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
     Mod+O repeat=false { toggle-overview; }
     Mod+Shift+Q repeat=false { close-window; }
+
+    Mod+P { spawn-sh "sh $XDG_CONFIG_HOME/niri/pass.sh"; }
 
     Mod+Ctrl+W { spawn-sh "niri msg output DP-1 scale 2"; }
     Mod+Ctrl+S { spawn-sh "niri msg output DP-1 scale 1"; }
