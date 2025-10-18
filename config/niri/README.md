@@ -9,3 +9,4 @@
 - xdg-desktop-portal-gnome
 - xdg-desktop-portal-gtk
 - xwayland-satellite
+- nirius
