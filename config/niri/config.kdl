@@ -331,11 +331,12 @@ workspace "four" {
 workspace "five" {
     open-on-output "DP-1"
 }
-workspace "coms"{
-    open-on-output "DP-2"
-}
 workspace "gaming" {
     open-on-output "DP-1"
+}
+
+workspace "coms"{
+    open-on-output "DP-2"
 }
 workspace "startup" {
     open-on-output "DP-2"
