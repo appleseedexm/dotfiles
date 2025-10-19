@@ -13,29 +13,6 @@
 # Change the argument to True to still load settings configured via autoconfig.yml
 config.load_autoconfig(False)
 
-# Use recommended page lifecycle state. This puts webpages into one of
-# three lifecycle states: active, frozen, or discarded. Using the
-# recommended lifecycle state lets the browser use less resources by
-# freezing or discarding web views when it's safe to do so. This results
-# in significant battery life savings. Ongoing page activity is taken
-# into account when determining the recommended lifecycle state, as to
-# not disrupt your browsing. This feature is only available on
-# QtWebEngine 6.5+. On older versions this setting is ignored. See the
-# Qt documentation for more details: https://doc.qt.io/qt-6/qtwebengine-
-# features.html#page-lifecycle-api
-# Type: Bool
-c.qt.chromium.use_recommended_page_lifecycle_state = True
-
-# The amount of time (in milliseconds) to wait before transitioning a
-# page to the frozen lifecycle state.
-# Type: Int
-c.qt.chromium.lifecycle_state_freeze_delay = 120000
-
-# The amount of time (in milliseconds) to wait before transitioning a
-# page to the discarded lifecycle state. Set to -1 to disable this
-# state.
-# Type: Int
-c.qt.chromium.lifecycle_state_discard_delay = 300000
 # Additional environment variables to set. Setting an environment
 # variable to null/None will unset it.
 # Type: Dict
@@ -127,7 +104,7 @@ config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}; rv:136.0) Geck
 
 # Enable the ad/host blocker
 # Type: Bool
-config.set('content.blocking.enabled', False, 'https://www.baeldung.com/*')
+config.set('content.blocking.enabled', False, '')
 
 # Which method of blocking ads should be used.  Support for Adblock Plus
 # (ABP) syntax blocklists using Brave's Rust library requires the
