@@ -27,6 +27,7 @@ alias nv="nvim . "
 alias paqi="paru -Qi | grep -i name"
 alias sunshine-present=sunshine controller=disabled keyboard=disabled mouse=disabled
 alias today="tmux new-session 'nvim -c ObsidianToday'"
+alias cfniri="nvim $XDG_CONFIG_HOME/niri/"
 alias cargoupdate="cargo install $(cargo install --list | egrep '^[a-z0-9_-]+ v[0-9.]+:$' | cut -f1 -d' ')"
 alias theme.sh="sh ~/.scripts/theme.sh"
 alias agt="amdgpu_top --dark"
