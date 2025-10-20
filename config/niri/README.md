@@ -10,3 +10,4 @@
 - xdg-desktop-portal-gtk
 - xwayland-satellite
 - nirius
+- fuzzel

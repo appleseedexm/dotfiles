@@ -134,7 +134,7 @@ binds {
     // applications
     Mod+Shift+G { spawn "cartridges"; }
     Mod+Return hotkey-overlay-title="Open a Terminal: foot" { spawn "foot"; }
-    Mod+D hotkey-overlay-title="Run an Application: tofi" { spawn-sh "tofi-drun --drun-launch=true"; }
+    Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn-sh "fuzzel"; }
 
     // system
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }

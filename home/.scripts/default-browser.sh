@@ -16,7 +16,7 @@ if [[ "$DEFAULT_BROWSER_PROFILE" == "work" ]]; then
 fi
 
 if [[ "$PPPCOMMAND" == "foot" ]]; then
-    INSTANCE=$(printf "default\nwork\n" | tofi)
+    INSTANCE=$(printf "default\nwork\n" | fuzzel --dmenu)
 
     if [[ "$INSTANCE" == "work" ]]; then
         PROFILE="$PROFILE_WORK"

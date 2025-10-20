@@ -6,7 +6,7 @@ DP1_WORKSPACE=$(echo "$WORKSPACES" | jq ".[] | select(.is_active == true and .ou
 DP2_WORKSPACE=$(echo "$WORKSPACES" | jq ".[] | select(.is_active == true and .output == \"DP-2\") | .idx")
 WORKSPACE_FOCUSED_IDX=$(echo "$WORKSPACES" | jq ".[] | select(.is_focused == true) | .idx")
 WORKSPACE_FOCUSED_DISPLAY=$(echo "$WORKSPACES" | jq -r ".[] | select(.is_focused == true) | .output")
-WINDOW_TO_FETCH=$(echo "$WINDOWS" | jq -r 'map("\(.title) - \(.app_id) - \(.id)") | .[]' | tofi | awk -F- '{print $NF}' | xargs)
+WINDOW_TO_FETCH=$(echo "$WINDOWS" | jq -r 'map("\(.title) - \(.app_id) - \(.id)") | .[]' | fuzzel --dmenu | awk -F- '{print $NF}' | xargs)
 
 if [[ -n "$WINDOW_TO_FETCH" ]] ; then
 
