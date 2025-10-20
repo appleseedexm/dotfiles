@@ -132,7 +132,7 @@ binds {
     Mod+MouseMiddle { spawn "nirius" "toggle-follow-mode"; }
 
     // applications
-    Mod+G { spawn "cartridges"; }
+    Mod+Shift+G { spawn "cartridges"; }
     Mod+Return hotkey-overlay-title="Open a Terminal: foot" { spawn "foot"; }
     Mod+D hotkey-overlay-title="Run an Application: tofi" { spawn-sh "tofi-drun --drun-launch=true"; }
 
