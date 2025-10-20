@@ -104,7 +104,7 @@ config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}; rv:136.0) Geck
 
 # Enable the ad/host blocker
 # Type: Bool
-config.set('content.blocking.enabled', False, '')
+c.content.blocking.enabled = True
 
 # Which method of blocking ads should be used.  Support for Adblock Plus
 # (ABP) syntax blocklists using Brave's Rust library requires the
