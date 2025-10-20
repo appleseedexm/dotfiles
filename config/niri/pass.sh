@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [[ -z $(pgrep -f proton-pass) ]] ; then
+    proton-pass &>/dev/null & disown;
+    sleep 1;
+fi
+
 TEMP_WORKSPACE_NAME="temp-target-float"
 WINDOWS=$(niri msg -j windows)
 WORKSPACES=$(niri msg -j workspaces)
@@ -27,5 +32,7 @@ else
     if [[ -z $WORKSPACE_FOCUSED_NAME ]] ; then
         niri msg action unset-workspace-name 
     fi
+
+    niri msg action focus-window --id $WINDOW_TO_FETCH
 
 fi
