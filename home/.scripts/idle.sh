@@ -1,5 +1,7 @@
+#!/bin/bash
+
 CMD="swayidle"
-CMD_EXEC="sh $XDG_CONFIG_HOME/niri/idle.sh"
+CMD_EXEC="sh $XDG_CONFIG_HOME/mango/scripts/idle.sh"
 
 OUTPUT_IDLE_RUN_STATE=false
 
