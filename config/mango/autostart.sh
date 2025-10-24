@@ -3,7 +3,8 @@
 set +e
 
 # obs
-dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=wlroots >/dev/null 2>&1
+# dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=wlroots >/dev/null 2>&1
+systemctl --user set-environment XDG_CURRENT_DESKTOP=wlroots; systemctl --user import-environment WAYLAND_DISPLAY; systemctl --user start xdg-desktop-portal-wlr.service
 
 # notify
 # swaync -c ~/.config/mango/swaync/config.jsonc -s ~/.config/mango/swaync/style.css >/dev/null 2>&1 &
@@ -45,3 +46,14 @@ waybar >/dev/null 2>&1 &
 
 # change light value and volume value by swayosd-client in keybind
 # swayosd-server >/dev/null 2>&1 &
+#
+
+sh $XDG_CONFIG_HOME/mango/scripts/idle.sh >/dev/null 2>&1 &
+sh $XDG_CONFIG_HOME/mango/scripts/lock.sh >/dev/null 2>&1 &
+sh $HOME/.scripts/mute.sh -s >/dev/null 2>&1 &
+
+easyeffects --gapplication-service >/dev/null 2>&1 &
+proton-pass >/dev/null 2>&1 &
+obsidian >/dev/null 2>&1 &
+
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
