@@ -10,22 +10,25 @@
     "modules-left": [
         "custom/left",
         "custom/arch",
-        "niri/workspaces",
+        // "niri/workspaces",
+        "ext/workspaces",
+        // "dwl/tags",
+        "wlr/taskbar",
         "custom/right",
+    ],
+    "modules-center": [
+        "custom/left",
+        //"custom/clock",
+        "dwl/window",
+        "custom/right"
+    ],
+    "modules-right": [
         "custom/left",
         "tray",
         "custom/mic",
         "custom/idle",
         "custom/dunst",
-        "custom/right"
-    ],
-    "modules-center": [
-        "custom/left",
-        //"custom/clock",
-        "niri/window",
-        "custom/right"
-    ],
-    "modules-right": [
+        "custom/right",
         "custom/left",
         "cpu",
         "memory",
@@ -37,6 +40,42 @@
         "clock#time",
         "custom/right"
     ],
+    "ext/workspaces": {
+      "format": "{icon}",
+      "ignore-hidden": true,
+      // "active-only":true,
+      "on-click": "activate",
+      "on-click-right": "deactivate",
+      "sort-by-id": true,
+      // "format-icons": {
+      //   "1": "",
+      //   "2": "",
+      //   "3": "",
+      //   "4": "",
+      //   "5": "",
+      //   "urgent": "",
+      //   "active": "",
+      //   "default": ""
+      // },
+    },
+    "dwl/tags": {
+      "num-tags": 9,
+      "hide-vacant": true,
+      // "tag-labels": ["一", "二", "三", "四", "五", "六", "七", "八", "九"]
+    },
+    "dwl/window": {
+        "format": "[{layout}]{title}"
+    },
+    "wlr/taskbar": {
+      "format": "{icon}",
+      "icon-size": 12,
+      "all-outputs": false,
+      "tooltip-format": "{title}",
+      "markup": true,
+      "on-click": "activate",
+      "on-click-right": "close",
+      "ignore-list": ["Rofi", "wofi"]
+    },
     "network": {
         "tooltip": true,
         "format-wifi": "<span>  {bandwidthDownBytes}</span> <span>  {bandwidthUpBytes}</span>",
