@@ -1,6 +1,6 @@
 #!/bin/bash
-# 自启动脚本 仅作参考
 
+set +e
 
 # obs
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=wlroots >/dev/null 2>&1
