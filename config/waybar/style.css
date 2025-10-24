@@ -42,6 +42,8 @@ window#waybar {
 #backlight,
 #disk,
 #custom-control-center,
+#taskbar,
+#tags,
 #network {
     margin: 2px 0px 12px;
     padding: 4px 4px;
@@ -70,7 +72,7 @@ tooltip {
     color: @foreground;
 }
 
-#workspaces button.focused {
+#workspaces button.focused, #workspaces button.active {
     color: @foreground;
     border-bottom: 1px solid @foreground;
 }
