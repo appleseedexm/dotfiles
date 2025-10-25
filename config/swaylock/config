@@ -1,31 +1,31 @@
 font=TerminessNerdFont Mono
 image=~/Pictures/backgrounds/background1.jpg
 
-indicator-radius=240
-indicator-thickness=20
+indicator-radius=50
+indicator-thickness=5
 indicator-caps-lock
 
-key-hl-color=880033
+key-hl-color=84158e44
 
 separator-color=00000000
 
-inside-color=00000099
+inside-color=1b041dcc
 inside-clear-color=ffd20400
 inside-caps-lock-color=009ddc00
 inside-ver-color=d9d8d800
 inside-wrong-color=ee2e2400
 
-ring-color=231f20D9
-ring-clear-color=231f20D9
+ring-color=1b041ddd
+ring-clear-color=ffd204cc
 ring-caps-lock-color=231f20D9
 ring-ver-color=231f20D9
 ring-wrong-color=231f20D9
 
 line-color=00000000
-line-clear-color=ffd204FF
-line-caps-lock-color=009ddcFF
-line-ver-color=d9d8d8FF
-line-wrong-color=ee2e24FF
+line-clear-color=ffd20400
+line-caps-lock-color=009ddc00
+line-ver-color=d9d8d800
+line-wrong-color=ee2e2400
 
 text-clear-color=ffd20400
 text-ver-color=d9d8d800
