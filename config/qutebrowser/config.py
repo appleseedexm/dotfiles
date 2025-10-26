@@ -178,6 +178,15 @@ config.set('content.notifications.enabled', True, 'https://mail.proton.me')
 #   - true
 #   - false
 #   - ask
+config.set('content.register_protocol_handler', False, 'https://mail.google.com?extsrc=mailto&url=%25s')
+
+# Allow websites to register protocol handlers via
+# `navigator.registerProtocolHandler`.
+# Type: BoolAsk
+# Valid values:
+#   - true
+#   - false
+#   - ask
 config.set('content.register_protocol_handler', True, 'https://outlook.live.com?mailtouri=%25s')
 
 # Allow websites to register protocol handlers via
