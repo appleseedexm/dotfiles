@@ -77,7 +77,6 @@ layout {
     }
 
     shadow {
-        on
         softness 30
         spread 5
         offset x=0 y=5
@@ -288,6 +287,8 @@ binds {
 }
 
 window-rule {
+    opacity 0.87
+
     geometry-corner-radius 8
     clip-to-geometry true
 }
@@ -296,7 +297,7 @@ window-rule {
 spawn-at-startup "waybar"
 spawn-sh-at-startup "sh $XDG_CONFIG_HOME/niri/idle.sh"
 spawn-sh-at-startup "sh $XDG_CONFIG_HOME/niri/lock.sh"
-spawn-sh-at-startup "swaylock -f -C $XDG_CONFIG_HOME/swaylock/config"
+spawn-sh-at-startup "wbg ~/Pictures/background.png"
 
 spawn-sh-at-startup "obsidian"
 
