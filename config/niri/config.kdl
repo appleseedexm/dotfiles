@@ -130,7 +130,6 @@ binds {
     Mod+Shift+O { spawn-sh "sh $XDG_CONFIG_HOME/niri/focus_window.sh"; }
     Mod+Ctrl+O { spawn-sh "sh $XDG_CONFIG_HOME/niri/fetch_window.sh"; }
     Mod+Shift+T { spawn "niri" "msg" "action" "toggle-window-rule-opacity"; }
-    Mod+MouseMiddle { spawn "nirius" "toggle-follow-mode"; }
 
     // applications
     Mod+Shift+G { spawn "cartridges"; }
@@ -266,6 +265,8 @@ binds {
     // misc
     Mod+V       { toggle-window-floating; }
     Mod+Shift+V { switch-focus-between-floating-and-tiling; }
+    Mod+MouseMiddle { spawn "nirius" "toggle-follow-mode"; }
+    Mod+Ctrl+V { spawn "nirius" "toggle-follow-mode"; }
 
     Mod+W { toggle-column-tabbed-display; }
 
