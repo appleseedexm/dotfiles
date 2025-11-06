@@ -378,6 +378,3 @@ spawn-sh-at-startup "obsidian"
 spawn-sh-at-startup "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'" // for GTK4 apps
 
 spawn-sh-at-startup "niriusd"
-
-spawn-sh-at-startup "niri msg action focus-workspace coms"
-spawn-sh-at-startup "niri msg action focus-workspace one"
