@@ -85,23 +85,6 @@ config.set('content.cookies.accept', 'all', 'devtools://*')
 # Type: String
 config.set('content.headers.accept_language', '', 'https://matchmaker.krunker.io/*')
 
-# User agent to send.  The following placeholders are defined:  *
-# `{os_info}`: Something like "X11; Linux x86_64". * `{webkit_version}`:
-# The underlying WebKit version (set to a fixed value   with
-# QtWebEngine). * `{qt_key}`: "Qt" for QtWebKit, "QtWebEngine" for
-# QtWebEngine. * `{qt_version}`: The underlying Qt version. *
-# `{upstream_browser_key}`: "Version" for QtWebKit, "Chrome" for
-# QtWebEngine. * `{upstream_browser_version}`: The corresponding
-# Safari/Chrome version. * `{upstream_browser_version_short}`: The
-# corresponding Safari/Chrome   version, but only with its major
-# version. * `{qutebrowser_version}`: The currently running qutebrowser
-# version.  The default value is equal to the default user agent of
-# QtWebKit/QtWebEngine, but with the `QtWebEngine/...` part removed for
-# increased compatibility.  Note that the value read from JavaScript is
-# always the global value.
-# Type: FormatString
-config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}; rv:136.0) Gecko/20100101 Firefox/139.0', 'https://accounts.google.com/*')
-
 # Enable the ad/host blocker
 # Type: Bool
 c.content.blocking.enabled = True
@@ -339,6 +322,7 @@ c.fonts.default_size = '12pt'
 c.fonts.hints = 'bold 12pt default_family'
 
 # Bindings for normal mode
+config.bind(';p', 'hint links fill :open -p {hint-url}')
 config.bind('<Ctrl+Space>', 'mode-enter passthrough')
 config.bind('<Ctrl+e>', 'config-cycle tabs.show always never')
 config.bind('<Ctrl+p>', 'cmd-set-text -s :open -p')
