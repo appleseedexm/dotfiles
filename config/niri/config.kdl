@@ -33,6 +33,7 @@ cursor {
 }
 
 output "DP-1" {
+    // off
     mode "3440x1440@143.923"
     scale 1
     transform "normal"
@@ -365,10 +366,9 @@ workspace "startup" {
 // autostart
 spawn-at-startup "waybar"
 spawn-sh-at-startup "hyprpaper"
+spawn-sh-at-startup "sh $HOME/.scripts/mute.sh -s"
 spawn-sh-at-startup "sh $XDG_CONFIG_HOME/niri/idle.sh"
 spawn-sh-at-startup "sh $XDG_CONFIG_HOME/niri/lock.sh"
-spawn-sh-at-startup "sh $HOME/.scripts/mute.sh -s"
-spawn-sh-at-startup "swaylock -f -C $XDG_CONFIG_HOME/swaylock/config"
 
 spawn-sh-at-startup "easyeffects --gapplication-service"
 spawn-sh-at-startup "proton-pass"
