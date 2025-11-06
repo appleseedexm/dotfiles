@@ -207,6 +207,15 @@ config.set('content.register_protocol_handler', True, 'https://calendar.google.c
 #   - ask
 config.set('content.register_protocol_handler', True, 'https://mail.proton.me#mailto=%25s')
 
+# How to proceed on TLS certificate errors.
+# Type: String
+# Valid values:
+#   - ask: Ask how to proceed for every certificate error (unless non-overridable due to HSTS).
+#   - ask-block-thirdparty: Ask how to proceed for normal page loads, but silently block resource loads.
+#   - block: Automatically block loading on certificate errors.
+#   - load-insecurely: Force loading pages despite certificate errors. This is *insecure* and should be avoided. Instead of using this, consider fixing the underlying issue or importing a self-signed certificate via `certutil` (or Chromium) instead.
+c.content.tls.certificate_errors = 'ask-block-thirdparty'
+
 # Duration (in milliseconds) to wait before removing finished downloads.
 # If set to -1, downloads are never removed.
 # Type: Int
