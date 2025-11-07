@@ -322,6 +322,7 @@ c.fonts.default_size = '12pt'
 c.fonts.hints = 'bold 12pt default_family'
 
 # Bindings for normal mode
+config.bind(';m', 'hint links spawn streamlink -p mpv {hint-url} best')
 config.bind(';p', 'hint links fill :open -p {hint-url}')
 config.bind('<Ctrl+Space>', 'mode-enter passthrough')
 config.bind('<Ctrl+e>', 'config-cycle tabs.show always never')
