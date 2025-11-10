@@ -1,4 +1,4 @@
-@define-color foreground #38ef7d;
+@define-color foreground #ff8f66;
 @define-color background rgba(27,4,29, 0.65); /* #1b041d */
 /* other purple tone: 84158e */
 
@@ -86,7 +86,7 @@ tooltip {
     /*background-color: #082C6C;*/
     background: none;
     border-radius: 20px 0px 0px 6px;
-    color: #38ef7d;
+    color: @foreground;
 }
 
 #tray {

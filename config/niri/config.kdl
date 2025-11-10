@@ -68,8 +68,8 @@ layout {
 
     focus-ring {
         width 3
-        active-gradient from="#84158e" to="#38ef7d" angle=-45 relative-to="workspace-view" in="srgb"
-        inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
+        active-gradient from="#84158e" to="#ff4500" angle=-45 in="oklch" // relative-to="workspace-view"
+        inactive-gradient from="#505050" to="#808080" angle=45 // relative-to="workspace-view"
     }
 
     border {
@@ -292,7 +292,7 @@ binds {
 }
 
 window-rule {
-    opacity 0.87
+    opacity 0.92
     geometry-corner-radius 8
     clip-to-geometry true
 }
