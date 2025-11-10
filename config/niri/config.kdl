@@ -102,6 +102,8 @@ overview {
 
 layer-rule {
     match namespace="^hyprpaper$"
+    match namespace="^awww-daemon$"
+    
     place-within-backdrop true
 }
 
