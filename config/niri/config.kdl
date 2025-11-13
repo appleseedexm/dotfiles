@@ -132,6 +132,7 @@ binds {
     Mod+Shift+O { spawn-sh "sh $XDG_CONFIG_HOME/niri/focus_window.sh"; }
     Mod+Ctrl+O { spawn-sh "sh $XDG_CONFIG_HOME/niri/fetch_window.sh"; }
     Mod+Shift+T { spawn "niri" "msg" "action" "toggle-window-rule-opacity"; }
+    Mod+Shift+A { spawn-sh "awww pause"; }
 
     // applications
     Mod+Shift+G { spawn "cartridges"; }
@@ -362,10 +363,10 @@ workspace "startup" {
 
 // autostart
 spawn-at-startup "waybar"
-spawn-sh-at-startup "hyprpaper"
 spawn-sh-at-startup "sh $HOME/.scripts/mute.sh -s"
 spawn-sh-at-startup "sh $XDG_CONFIG_HOME/niri/idle.sh"
 spawn-sh-at-startup "sh $XDG_CONFIG_HOME/niri/lock.sh"
+spawn-sh-at-startup "awww-daemon"
 
 spawn-sh-at-startup "easyeffects --gapplication-service"
 spawn-sh-at-startup "proton-pass"
