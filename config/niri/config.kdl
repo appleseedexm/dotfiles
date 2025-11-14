@@ -47,7 +47,7 @@ output "DP-2" {
 }
 
 layout {
-    gaps 14
+    gaps 34
 
     center-focused-column "never"
 
@@ -85,9 +85,10 @@ layout {
     }
 
     struts {
-        left -5
-        right -5
-        top -15
+        left -15
+        right -15
+        top -35
+        bottom -15
     }
 
     background-color "transparent"
