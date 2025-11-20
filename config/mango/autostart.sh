@@ -8,7 +8,7 @@ systemctl --user set-environment XDG_CURRENT_DESKTOP=wlroots; systemctl --user i
 
 
 # wallpaper
-hyprpaper >/dev/null 2>&1 &
+awww-daemon >/dev/null 2>&1 &
 
 # top bar
 waybar >/dev/null 2>&1 &
