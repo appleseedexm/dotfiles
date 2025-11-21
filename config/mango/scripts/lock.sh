@@ -1,2 +1,3 @@
 #!/bin/bash
-swaylock -f
+hyprlock \
+    -c $XDG_CONFIG_HOME/mango/scripts/hyprlock.conf
