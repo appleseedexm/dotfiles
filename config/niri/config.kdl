@@ -336,6 +336,11 @@ window-rule {
 
     opacity 1.0
 }
+window-rule {
+    match app-id="Dunst"
+
+    block-out-from "screencast"
+}
 
 workspace "one" {
     open-on-output "DP-1"
