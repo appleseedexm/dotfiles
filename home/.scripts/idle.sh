@@ -1,6 +1,7 @@
 #!/bin/bash
 
-CMD="swayidle"
+exit 0 
+CMD="hypridle"
 CMD_EXEC="sh $XDG_CONFIG_HOME/mango/scripts/idle.sh"
 
 OUTPUT_IDLE_RUN_STATE=false
