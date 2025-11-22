@@ -316,7 +316,7 @@ window-rule {
     block-out-from "screencast"
 }
 window-rule {
-    match app-id="TeamSpeak"
+    match app-id="teamspeak-client"
     match app-id="WebCord"
     match app-id="discord"
     match app-id="tidal-hifi"
