@@ -321,6 +321,8 @@ window-rule {
     match app-id="discord"
     match app-id="tidal-hifi"
 
+    default-column-width { proportion 0.5; }
+
     open-on-workspace "coms"
 }
 window-rule {
