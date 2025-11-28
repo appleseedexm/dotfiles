@@ -255,6 +255,10 @@ c.tabs.select_on_remove = 'last-used'
 #   - switching: Show the tab bar when switching tabs.
 c.tabs.show = 'never'
 
+# Open a new window for every tab.
+# Type: Bool
+c.tabs.tabs_are_windows = True
+
 # Search engines which can be used via the address bar.  Maps a search
 # engine name (such as `DEFAULT`, or `ddg`) to a URL with a `{}`
 # placeholder. The placeholder will be replaced by the search term, use
