@@ -13,6 +13,10 @@
 # Change the argument to True to still load settings configured via autoconfig.yml
 config.load_autoconfig(False)
 
+# Load a restored tab as soon as it takes focus.
+# Type: Bool
+c.session.lazy_restore = True
+
 # Additional environment variables to set. Setting an environment
 # variable to null/None will unset it.
 # Type: Dict
