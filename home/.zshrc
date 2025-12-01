@@ -30,7 +30,6 @@ alias sunshine-present="sunshine controller=disabled keyboard=disabled mouse=dis
 alias today="tmux new-session 'nvim -c ObsidianToday'"
 alias cfniri="nvim $XDG_CONFIG_HOME/niri/"
 alias cargoupdate="cargo install $(cargo install --list | egrep '^[a-z0-9_-]+ v[0-9.]+:$' | cut -f1 -d' ')"
-alias theme.sh="sh ~/.scripts/theme.sh"
 alias agt="amdgpu_top --dark"
 alias f="fd --type f -H | fzf | sed 's/\ /\\\ /g' | xargs nvim"
 alias s="rg_fzf_nvim"
@@ -45,28 +44,6 @@ fi
 # Load private configuration if it exists
 if [ -f $HOME/.shell_local ]; then
     source $HOME/.shell_local
-fi
-
-# Theme management scripts
-if command -v theme.sh > /dev/null; then
-	[ -e ~/.theme_history ] && theme.sh "$(theme.sh -l|tail -n1)"
-
-	# Optional functions and aliases for theme management
-
-	# Bind C-o to the last theme.
-	last_theme() {
-		theme.sh "$(theme.sh -l|tail -n2|head -n1)"
-	}
-
-	zle -N last_theme
-
-	alias th='theme.sh -i'
-
-	# Interactively load a light theme
-	alias thl='theme.sh --light -i'
-
-	# Interactively load a dark theme
-	alias thd='theme.sh --dark -i'
 fi
 
 # SSH session type detection
