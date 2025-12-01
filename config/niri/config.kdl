@@ -347,6 +347,11 @@ window-rule {
 
     block-out-from "screencast"
 }
+window-rule {
+    match app-id="qutebrowser"
+
+    default-column-width { proportion 0.33333; }
+}
 
 workspace "one" {
     open-on-output "DP-1"
