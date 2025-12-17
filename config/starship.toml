@@ -1,3 +1,5 @@
+# based on https://github.com/smithumble/starship-cockpit
+
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
