@@ -28,7 +28,7 @@ i3
 alacritty
 ```
 
-## Tools referenced
+## Tools of choice
 
 ```
 ripgrep
@@ -45,9 +45,10 @@ yazi
 
 ### zsh
 
-I use oh-my-zsh with:
+I use zsh with
 
 ```
+starship
 zsh-vi-mode
 zsh-syntax-highlighting
 ```
