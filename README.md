@@ -1,34 +1,39 @@
 # my personal .dotfiles
 
-My personal dotfiles.
 Installation is done with linking folders & files from `install.sh`. 
 
-## System Setup
+## system setup
+
+I use arch with my own custom keyboard-first "shell":
 
 ```
-arch
-hyprland
+niri
 waybar
-yofi
-qutebrowser
+dunst
+fuzzel
 foot
 zsh
-neovim
-tmux
-tmux-sessionizer
+qutebrowser
 mpv
+awww
+grimshot
+sunshine
 ```
 
-### Non-wayland
+### non-wayland
 
-For my non-wayland VM I have minimal setups for these fallbacks:
+**!!deprecated**: I currently only run wayland setups so these configs are not updated, use at your own risk!
+
+~~For my non-wayland VM I have minimal setups for these fallbacks:~~
 
 ```
 i3
 alacritty
 ```
 
-## Tools of choice
+## cli tools of choice
+
+There's more, but these will come up in my config files:
 
 ```
 ripgrep
@@ -41,6 +46,9 @@ paru
 sdkman
 nmon
 yazi
+tmux
+tmux-sessionizer
+neovim (nvim)
 ```
 
 ### zsh
@@ -53,14 +61,13 @@ zsh-vi-mode
 zsh-syntax-highlighting
 ```
 
-## TMUX
+### tmux
 
 See separate [README](/README_TMUX.md)
 
-
-## Related
+## related
 
 - [nvim](https://github.com/appleseedexm/nvim)
-- [hyprland](https://github.com/appleseedexm/hypr)
+- *deprecated* [hyprland](https://github.com/appleseedexm/hypr)
 - *deprecated* [ironbar](https://github.com/appleseedexm/ironbar)
 - *deprecated* [i3](https://github.com/appleseedexm/i3)
