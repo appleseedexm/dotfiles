@@ -2,6 +2,12 @@
 
 # xdg-settings set default-web-browser default-browser.desktop
 
+while getopts "p" flag; do
+    case "${flag}" in
+        p) path_only=true ;;
+    esac
+done
+
 DEFAULT_BROWSER="qutebrowser"
 DEFAULT_FLAGS="--target tab --untrusted-args"
 PROFILE_WORK="-B $HOME/.local/share/qutebrowser-work"
@@ -22,6 +28,11 @@ if [[ "$PPPCOMMAND" == "foot" ]]; then
         PROFILE="$PROFILE_WORK"
     fi
 
+fi
+
+if [[ $path_only == true ]]; then
+    echo "$DEFAULT_BROWSER $PROFILE $DEFAULT_FLAGS"
+    exit
 fi
 
 $DEFAULT_BROWSER $PROFILE $DEFAULT_FLAGS "$@"
