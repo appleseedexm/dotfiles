@@ -10,8 +10,9 @@ WINDOW_TO_FETCH=$(echo "$WINDOWS" | jq -r 'map("\(.title) - \(.app_id) - \(.id)"
 
 if [[ -n "$WINDOW_TO_FETCH" ]] ; then
 
-    WINDOW_TO_FETCH_WORKSPACE=$(echo "$WINDOWS" | jq --argjson window_id $WINDOW_TO_FETCH '.[] | select(.id == $window_id) | .workspace_id')
-    WINDOW_TO_FETCH_DISPLAY=$(echo "$WORKSPACES" | jq -r --argjson workspace_id $WINDOW_TO_FETCH_WORKSPACE '.[] | select(.id == $workspace_id) | .output')
+    WINDOW_TO_FETCH_WORKSPACE_ID=$(echo "$WINDOWS" | jq --argjson window_id $WINDOW_TO_FETCH '.[] | select(.id == $window_id) | .workspace_id')
+    WINDOW_TO_FETCH_WORKSPACE=$(echo "$WORKSPACES" | jq -r --argjson workspace_id $WINDOW_TO_FETCH_WORKSPACE_ID '.[] | select(.id == $workspace_id) | .idx')
+    WINDOW_TO_FETCH_DISPLAY=$(echo "$WORKSPACES" | jq -r --argjson workspace_id $WINDOW_TO_FETCH_WORKSPACE_ID '.[] | select(.id == $workspace_id) | .output')
 
     if [[ $WINDOW_TO_FETCH_DISPLAY == $WORKSPACE_FOCUSED_DISPLAY ]] ; then
 
