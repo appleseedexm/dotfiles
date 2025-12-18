@@ -86,6 +86,11 @@ function rg_fzf_nvim(){
   rg $1 | fzf | egrep -o '^[^:]+' | xargs nvim
 }
 
+# cd multiple folders up
+function cd_up() {
+  cd $(printf "%0.s../" $(seq 1 $1 ));
+}
+
 # Aliases for common commands
 alias nv="nvim . "
 alias paqi="paru -Qi | grep -i name"
@@ -93,6 +98,9 @@ alias sunshine-present="sunshine controller=disabled keyboard=disabled mouse=dis
 alias today="tmux new-session 'nvim -c ObsidianToday'"
 alias cfniri="nvim $XDG_CONFIG_HOME/niri/"
 alias agt="amdgpu_top --dark"
+alias 'cd..'='cd_up'
+alias 'cd...'='cd_up 3'
+alias 'cd....'='cd_up 4'
 alias f="fd --type f -H | fzf | sed 's/\ /\\\ /g' | xargs nvim"
 alias s="rg_fzf_nvim"
 alias o="xdg-open"
