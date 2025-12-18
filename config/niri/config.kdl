@@ -135,7 +135,9 @@ binds {
     Mod+Shift+CTRL+P { spawn-sh "swaylock -f -C $XDG_CONFIG_HOME/swaylock/config"; }
     Mod+M { spawn-sh "sh $HOME/.scripts/mute.sh"; }
     Mod+Shift+M { spawn-sh "sh $HOME/.scripts/dnd.sh"; }
-    Mod+Shift+N { spawn-sh "sh $HOME/.scripts/idle.sh"; } 
+    Mod+Shift+N { spawn-sh "sh $HOME/.scripts/idle.sh"; }
+    Mod+E { spawn-sh "sh $HOME/.scripts/qute.sh"; }
+    Mod+Shift+E { spawn-sh "sh $HOME/.scripts/qute.sh -w"; }
     Mod+Shift+O { spawn-sh "sh $XDG_CONFIG_HOME/niri/focus_window.sh"; }
     Mod+Ctrl+O { spawn-sh "sh $XDG_CONFIG_HOME/niri/fetch_window.sh"; }
     Mod+Shift+T { spawn "niri" "msg" "action" "toggle-window-rule-opacity"; }
@@ -287,7 +289,6 @@ binds {
 
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
-    Mod+Shift+E { quit; }
     Ctrl+Alt+Delete { quit; }
 
     Mod+Shift+Slash { show-hotkey-overlay; }
