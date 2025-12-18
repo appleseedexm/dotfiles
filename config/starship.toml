@@ -100,7 +100,6 @@ format = '[ $user ]($style)'
 [directory]
 style = "fg:color_directory"
 read_only_style = "fg:color_directory"
-repo_root_style = "bold fg:color_directory"
 format = "[ $path ]($style)"
 read_only = " "
 home_symbol = "~"
