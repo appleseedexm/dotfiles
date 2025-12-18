@@ -21,14 +21,8 @@ autoload -U compinit; compinit
 # # Set the PS1 prompt variable to include session type
 # PS1="$SESSION_TYPE$PS1"
 
-# Source fzf integration for zsh
-source <(fzf --zsh)
-
 # Starship
 eval "$(starship init zsh)"
-
-# zsh-syntax-highlighting
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # zsh-vi-mode
 source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
@@ -43,6 +37,12 @@ for f in zvm_vi_put_after zvm_vi_put_before zvm_vi_replace_selection; do
   eval "$(echo "_$f() {"; declare -f $f | tail -n +2)"
   eval "$f() { CUTBUFFER=\$(cbprint); _$f \"\$@\"; zvm_highlight clear }"
 done
+
+# Source fzf integration for zsh
+source <(fzf --zsh)
+
+# zsh-syntax-highlighting
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # edit mode
 autoload -U edit-command-line
