@@ -6,6 +6,9 @@ SAVEHIST=100000
 setopt HIST_SAVE_NO_DUPS
 setopt INC_APPEND_HISTORY
 
+setopt AUTO_PUSHD
+setopt PUSHD_SILENT
+
 # Completion
 autoload -U compinit; compinit
 
