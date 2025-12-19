@@ -10,7 +10,7 @@ done
 
 DEFAULT_BROWSER="qutebrowser"
 DEFAULT_FLAGS="--target tab --untrusted-args"
-PROFILE_WORK="-B $HOME/.local/share/qutebrowser-work"
+PROFILE_WORK="-B $XDG_DATA_HOME/qutebrowser-work -C $XDG_DATA_HOME/qutebrowser-work/config/load-configs.py"
 PROFILE_DEFAULT=""
 PROFILE=""
 
