@@ -47,7 +47,7 @@ output "Virtual-1" {
 // }
 
 layout {
-    gaps 14
+    gaps 34
 
     center-focused-column "never"
 
@@ -68,8 +68,8 @@ layout {
 
     focus-ring {
         width 3
-        active-gradient from="#84158e" to="#38ef7d" angle=-45 relative-to="workspace-view" in="srgb"
-        inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
+        active-gradient from="#84158e" to="#ff4500" angle=-45 in="oklch" // relative-to="workspace-view"
+        inactive-gradient from="#505050" to="#808080" angle=45 // relative-to="workspace-view"
     }
 
     border {
@@ -84,9 +84,10 @@ layout {
     }
 
     struts {
-        left -5
-        right -5
-        top -15
+        left -15
+        right -15
+        top -35
+        bottom -15
     }
 
     background-color "transparent"
@@ -101,6 +102,8 @@ overview {
 
 layer-rule {
     match namespace="^hyprpaper$"
+    match namespace="^awww-daemon$"
+    
     place-within-backdrop true
 }
 
@@ -125,10 +128,13 @@ binds {
     Mod+Shift+CTRL+P { spawn-sh "swaylock -f -C $XDG_CONFIG_HOME/swaylock/config"; }
     Mod+M { spawn-sh "sh $HOME/.scripts/mute.sh"; }
     Mod+Shift+M { spawn-sh "sh $HOME/.scripts/dnd.sh"; }
-    Mod+Shift+N { spawn-sh "sh $HOME/.scripts/idle.sh"; } 
+    Mod+Shift+N { spawn-sh "sh $HOME/.scripts/idle.sh"; }
+    Mod+E { spawn-sh "sh $HOME/.scripts/qute.sh"; }
+    Mod+Shift+E { spawn-sh "sh $HOME/.scripts/qute.sh -w"; }
     Mod+Shift+O { spawn-sh "sh $XDG_CONFIG_HOME/niri/focus_window.sh"; }
     Mod+Ctrl+O { spawn-sh "sh $XDG_CONFIG_HOME/niri/fetch_window.sh"; }
     Mod+Shift+T { spawn "niri" "msg" "action" "toggle-window-rule-opacity"; }
+    Mod+Shift+A { spawn-sh "awww pause"; }
 
     // applications
     Mod+Shift+G { spawn "cartridges"; }
@@ -251,6 +257,7 @@ binds {
     Mod+Ctrl+R { reset-window-height; }
     Mod+F { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
+    Mod+Alt+F { maximize-window-to-edges; }
     Mod+Ctrl+F { expand-column-to-available-width; }
 
     Mod+C { center-column; }
@@ -273,7 +280,6 @@ binds {
 
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
-    Mod+Shift+E { quit; }
     Ctrl+Alt+Delete { quit; }
 
     Mod+Shift+Slash { show-hotkey-overlay; }
@@ -287,11 +293,16 @@ binds {
 }
 
 window-rule {
-    opacity 0.87
-
+    opacity 0.92
     geometry-corner-radius 8
     clip-to-geometry true
 }
+window-rule {
+    match app-id="qutebrowser"
+
+    default-column-width { proportion 0.33333; }
+}
+
 
 // autostart
 spawn-at-startup "waybar"
@@ -302,4 +313,3 @@ spawn-sh-at-startup "wbg ~/Pictures/background.png"
 spawn-sh-at-startup "obsidian"
 
 spawn-sh-at-startup "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'" // for GTK4 apps
-spawn-sh-at-startup "spice-vdagent"
