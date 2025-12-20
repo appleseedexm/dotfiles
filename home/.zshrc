@@ -111,8 +111,8 @@ alias la='ls -lAh'
 alias ll='ls -lh'
 alias ls='ls -G'
 alias lsa='ls -lah'
-if command -v exa > /dev/null; then
-    alias ls="exa -l --group-directories-first"
+if command -v eza > /dev/null; then
+    alias ls="eza -l --group-directories-first"
     alias ld="l --sort date"
 fi
 

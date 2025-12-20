@@ -40,7 +40,7 @@ ripgrep
 fzf
 fd
 zoxide
-exa
+eza
 amdgpu_top
 paru
 sdkman
