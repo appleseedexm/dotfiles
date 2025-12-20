@@ -10,6 +10,7 @@ command_timeout = 2000
 format = """
 $os\
 $username\
+$hostname\
 $directory\
 $git_branch\
 $git_commit\
@@ -96,6 +97,11 @@ show_always = true
 style_user = "fg:color_username"
 style_root = "bold fg:color_danger"
 format = '[ $user ]($style)'
+
+[hostname]
+ssh_only = false
+format = "[$ssh_symbol$hostname](bold red) "
+ssh_symbol = "@"
 
 [directory]
 style = "fg:color_directory"
