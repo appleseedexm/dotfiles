@@ -6,7 +6,7 @@ done
 
 IFS="|"
 
-SHORTCUTS="search|aursearch|archhelp|archpackages|youtube|github|"
+SHORTCUTS="duckduck|aursearch|archhelp|archpackages|youtube|github|"
 QUTE_DATA_DIR="$XDG_DATA_HOME/qutebrowser"
 QUTE_CONFIG_DIR="$XDG_CONFIG_HOME/qutebrowser"
 CUSTOM_PROFILE=""
@@ -29,7 +29,7 @@ url=$(echo "$url" | sed -E 's/[^ ]+ +//g' | grep -E "https?:" || echo "$url")
 if [[ "${IFS}${SHORTCUTS[*]}${IFS}" =~ "${IFS}${url}${IFS}" ]]; then
     target="$(fuzzel --dmenu -l 0 --prompt="$url > ")"
     [ -z "${target// }" ] && exit
-    url="${url//search} $target"
+    url="${url//duckduck} $target"
 fi
 
 unset IFS
