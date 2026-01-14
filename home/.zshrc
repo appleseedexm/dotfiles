@@ -9,6 +9,11 @@ setopt INC_APPEND_HISTORY
 setopt AUTO_PUSHD
 setopt PUSHD_SILENT
 
+zstyle ':completion:*' menu select
+zstyle ':completion:*' accept-exact true
+zstyle ':completion:*' accept-exact-dirs true
+zstyle ':completion:*' path-completion true
+
 # Completion
 autoload -U compinit; compinit
 
