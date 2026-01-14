@@ -6,7 +6,7 @@ done
 
 IFS="|"
 
-SHORTCUTS="duckduck|aursearch|archhelp|archpackages|youtube|github|"
+SHORTCUTS="duckduck|aursearch|archhelp|archpackages|youtubesearch|githubsearch|"
 QUTE_DATA_DIR="$XDG_DATA_HOME/qutebrowser"
 QUTE_CONFIG_DIR="$XDG_CONFIG_HOME/qutebrowser"
 CUSTOM_PROFILE=""
