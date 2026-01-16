@@ -247,7 +247,7 @@ binds {
     Mod+5 { focus-workspace "five"; }
     Mod+6 { focus-workspace "gaming"; }
     Mod+7 { focus-workspace "coms"; }
-    Mod+8 { focus-workspace 8; }
+    Mod+8 { focus-workspace "media"; }
     Mod+9 { focus-workspace 9; }
     Mod+0 { focus-workspace "startup"; }
     Mod+Ctrl+1 { move-column-to-workspace focus=false "one"; }
@@ -257,7 +257,7 @@ binds {
     Mod+Ctrl+5 { move-column-to-workspace focus=false "five"; }
     Mod+Ctrl+6 { move-column-to-workspace focus=false "gaming"; }
     Mod+Ctrl+7 { move-column-to-workspace focus=false "coms"; }
-    Mod+Ctrl+8 { move-column-to-workspace focus=false 8; }
+    Mod+Ctrl+8 { move-column-to-workspace focus=false "media"; }
     Mod+Ctrl+9 { move-column-to-workspace focus=false 9; }
     Mod+Ctrl+0 { move-column-to-workspace focus=false "startup"; }
 
@@ -390,6 +390,9 @@ workspace "gaming" {
     open-on-output "DP-1"
 }
 
+workspace "media"{
+    open-on-output "DP-2"
+}
 workspace "coms"{
     open-on-output "DP-2"
 }
