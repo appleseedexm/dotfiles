@@ -138,8 +138,8 @@ animations {
 
 binds {
     // tools
-    Mod+S { spawn-sh "grimshot copy area"; }
-    Mod+Shift+S { spawn-sh "grimshot save area"; }
+    Mod+S { spawn-sh "niri msg action  screenshot"; }
+    Mod+Shift+S { spawn-sh "niri msg action screenshot-window"; }
     Mod+Shift+CTRL+P { spawn-sh "swaylock -f -C $XDG_CONFIG_HOME/swaylock/config"; }
     Mod+M { spawn-sh "sh $HOME/.scripts/mute.sh"; }
     Mod+Shift+M { spawn-sh "sh $HOME/.scripts/dnd.sh"; }
@@ -150,6 +150,8 @@ binds {
     Mod+Ctrl+O { spawn-sh "sh $XDG_CONFIG_HOME/niri/fetch_window.sh"; }
     Mod+Shift+T { spawn "niri" "msg" "action" "toggle-window-rule-opacity"; }
     Mod+Shift+A { spawn-sh "awww pause"; }
+    Alt+F10 { spawn-sh "killall -SIGUSR1 gpu-screen-recorder && sleep 0.5 && notify-send -u low -- 'GPU Screen Recorder' 'Replay saved'"; }
+    Alt+F9 { spawn-sh "niri msg action screenshot-screen"; }
 
     // applications
     Mod+Shift+G { spawn "cartridges"; }
