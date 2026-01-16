@@ -5,6 +5,8 @@ SOURCE_PATH=$PWD
 BACKUPS_CREATED=()
 MANUAL_INTERVENTION=()
 
+set -e
+sh $SOURCE_PATH/validate_xdg.sh
 
 function limiter(){
     echo "###################################################"
