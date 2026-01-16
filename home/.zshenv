@@ -10,7 +10,7 @@ export XDG_SCREENSHOTS_DIR="$HOME/Pictures/screenshots"
 export XDG_PICTURES_DIR="$HOME/Pictures"
 
 export EDITOR=nvim
-export TERMINAL="/usr/bin/foot"
+export TERMINAL=foot
 export NMON=cmt
 
 export ZVM_INIT_MODE=sourcing
