@@ -338,6 +338,11 @@ window-rule {
 }
 window-rule {
     match app-id="steam"
+
+    open-focused false
+}
+window-rule {
+    match app-id="steam"
     match app-id="Cartridges"
     match app-id="solaar"
     match app-id="net.lutris.Lutris"
