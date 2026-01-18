@@ -9,6 +9,7 @@ setopt INC_APPEND_HISTORY
 setopt AUTO_PUSHD
 setopt PUSHD_SILENT
 
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' menu select
 zstyle ':completion:*' accept-exact false
 zstyle ':completion:*' accept-exact-dirs false
