@@ -311,5 +311,6 @@ spawn-sh-at-startup "sh $XDG_CONFIG_HOME/niri/lock.sh"
 spawn-sh-at-startup "wbg ~/Pictures/background.png"
 
 spawn-sh-at-startup "obsidian"
+spawn-sh-at-startup "spice-vdagent"
 
 spawn-sh-at-startup "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'" // for GTK4 apps
