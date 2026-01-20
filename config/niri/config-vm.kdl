@@ -32,6 +32,12 @@ cursor {
     hide-after-inactive-ms 1000
 }
 
+gestures {
+    hot-corners {
+        off
+    }
+}
+
 output "Virtual-1" {
     mode "3440x1440@74.999"
     scale 1
