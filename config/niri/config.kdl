@@ -321,12 +321,14 @@ window-rule {
 
     open-on-workspace "startup"
     block-out-from "screencast"
+    open-focused false
 }
 window-rule {
     match app-id="Proton Pass"
 
     open-on-workspace "startup"
     block-out-from "screencast"
+    open-focused false
 }
 window-rule {
     match app-id="teamspeak-client"
