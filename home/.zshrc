@@ -8,6 +8,8 @@ setopt INC_APPEND_HISTORY
 
 setopt AUTO_PUSHD
 setopt PUSHD_SILENT
+setopt PUSHD_MINUS
+setopt PUSHD_TO_HOME
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' menu select
@@ -111,6 +113,7 @@ alias f="fd --type f -H | fzf | sed 's/\ /\\\ /g' | xargs nvim"
 alias s="rg_fzf_nvim"
 alias o="xdg-open"
 alias q="$HOME/.scripts/default-browser.sh"
+alias dh="dirs -v"
 
 alias l='ls -lah'
 alias la='ls -lAh'
