@@ -1,5 +1,5 @@
-@define-color foreground #ff8f66;
-@define-color background rgba(27,4,29, 0.65); /* #1b041d */
+@define-color foreground #15c757;
+@define-color background rgba(199,21,133,0.65); /* #1b041d */
 /* other purple tone: 84158e */
 
 * {
@@ -13,13 +13,13 @@
 window#waybar {
     /*background: rgba(21, 18, 27, 0);*/
     background: linear-gradient(to bottom,
-            rgba(27,4,29, 0.5),
-            rgba(27,4,29, 0.5),
-            rgba(27,4,29, 0.5),
-            rgba(27,4,29, 0.5),
-            rgba(27,4,29, 0.2),
-            rgba(27,4,29, 0));
-  }
+            rgba(2,14,6, 0.5),
+            rgba(2,14,6, 0.5),
+            rgba(2,14,6, 0.5),
+            rgba(2,14,6, 0.5),
+            rgba(2,14,6, 0.2),
+            rgba(2,14,6, 0));
+}
 
 
 #cpu,

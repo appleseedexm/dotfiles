@@ -1,0 +1,9 @@
+layout {
+    focus-ring {
+        active-gradient from="#063c1a" to="#15c757" angle=-45 in="oklch"   // relative-to="workspace-view"
+        inactive-gradient from="#505050" to="#808080" angle=45 // relative-to="workspace-view"
+    }
+    shadow {
+        color "#020e06"
+    }
+}
