@@ -280,6 +280,11 @@ c.tabs.tabs_are_windows = True
 # Type: Dict
 c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}', 'aursearch': 'https://aur.archlinux.org/packages?K={}', 'archhelp': 'https://wiki.archlinux.org/index.php?search={}', 'archpackages': 'https://archlinux.org/packages/?q={}', 'youtubesearch': 'https://www.youtube.com/results?search_query={}', 'githubsearch': 'https://github.com/search?q={}'}
 
+# Format to use for the window title. The same placeholders like for
+# `tabs.title.format` are defined.
+# Type: FormatString
+c.window.title_format = '{perc}{current_title}{title_sep}{host}{title_sep}qutebrowser'
+
 # Value to use for `prefers-color-scheme:` for websites. The "light"
 # value is only available with QtWebEngine 5.15.2+. On older versions,
 # it is the same as "auto". The "auto" value is broken on QtWebEngine
