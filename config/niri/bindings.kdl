@@ -8,8 +8,8 @@ binds {
     Mod+Shift+N { spawn-sh "sh $HOME/.scripts/idle.sh"; }
     Mod+E { spawn-sh "sh $HOME/.scripts/qute.sh"; }
     Mod+Shift+E { spawn-sh "sh $HOME/.scripts/qute.sh -w"; }
-    Mod+Shift+O { spawn-sh "sh $XDG_CONFIG_HOME/niri/focus_window.sh"; }
-    Mod+Ctrl+O { spawn-sh "sh $XDG_CONFIG_HOME/niri/fetch_window.sh"; }
+    Mod+Shift+O { spawn-sh "sh $XDG_CONFIG_HOME/niri/scripts/focus_window.sh"; }
+    Mod+Ctrl+O { spawn-sh "sh $XDG_CONFIG_HOME/niri/scripts/fetch_window.sh"; }
     Mod+Shift+T { spawn "niri" "msg" "action" "toggle-window-rule-opacity"; }
     Mod+Shift+A { spawn-sh "awww pause"; }
     Alt+F10 { spawn-sh "killall -SIGUSR1 gpu-screen-recorder && sleep 0.5 && notify-send -u low -- 'GPU Screen Recorder' 'Replay saved'"; }
@@ -167,7 +167,7 @@ binds {
     Mod+O repeat=false { toggle-overview; }
     Mod+Shift+Q repeat=false { close-window; }
 
-    Mod+P { spawn-sh "sh $XDG_CONFIG_HOME/niri/pass.sh"; }
+    Mod+P { spawn-sh "sh $XDG_CONFIG_HOME/niri/scripts/pass.sh"; }
 
     Mod+Ctrl+W { spawn-sh "niri msg output DP-1 scale 2"; }
     Mod+Ctrl+S { spawn-sh "niri msg output DP-1 scale 1"; }
