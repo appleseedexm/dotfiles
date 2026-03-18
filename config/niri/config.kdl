@@ -2,7 +2,7 @@ include "input.kdl"
 include "layout.kdl"
 include "colors.kdl"
 include "misc.kdl"
-include "bindings.kdl"
+include "bindings-desktop.kdl"
 include "window-rules.kdl"
 
 output "DP-1" {
