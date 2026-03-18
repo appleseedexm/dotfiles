@@ -57,7 +57,7 @@ wait_for_wpctl() {
 
     while [ $(get_volume_line | grep -c "vol") -eq "0" ]; do
         if [ $safety -gt 10 ]; then
-            dunst_error
+            # dunst_error
         fi
 
         ((safety++))
