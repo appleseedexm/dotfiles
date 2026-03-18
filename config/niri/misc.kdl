@@ -1,0 +1,18 @@
+hotkey-overlay {
+    skip-at-startup
+}
+
+overview {
+    zoom 0.66
+    workspace-shadow {
+        off
+    }
+}
+
+screenshot-path "~/Pictures/screenshots/Screenshot_%Y-%m-%d_%H-%M-%S.png"
+
+prefer-no-csd
+
+animations {
+    off
+}

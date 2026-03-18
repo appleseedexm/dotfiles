@@ -1,0 +1,41 @@
+input {
+    keyboard {
+        xkb {
+            layout "eu"
+        }
+
+        repeat-delay 300
+        repeat-rate 50
+
+        numlock
+    }
+
+    touchpad {
+        off
+    }
+
+    mouse {
+        accel-profile "flat"
+        accel-speed 1
+    }
+
+    trackpoint {
+        off
+    }
+
+    workspace-auto-back-and-forth
+
+    warp-mouse-to-focus
+    focus-follows-mouse max-scroll-amount="32%"
+}
+
+cursor {
+    hide-when-typing
+    hide-after-inactive-ms 1000
+}
+
+gestures {
+    hot-corners {
+        off
+    }
+}

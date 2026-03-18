@@ -1,0 +1,70 @@
+layer-rule {
+    match namespace="^hyprpaper$"
+    match namespace="^awww-daemon$"
+    
+    place-within-backdrop true
+}
+
+window-rule {
+    opacity 0.92
+    geometry-corner-radius 8
+    clip-to-geometry true
+}
+window-rule {
+    match app-id="obsidian"
+
+    open-on-workspace "startup"
+    block-out-from "screencast"
+    open-focused false
+}
+window-rule {
+    match app-id="Proton Pass"
+
+    open-on-workspace "startup"
+    block-out-from "screencast"
+    open-focused false
+}
+window-rule {
+    match app-id="teamspeak-client"
+    match app-id="WebCord"
+    match app-id="discord"
+    match app-id="tidal-hifi"
+
+    default-column-width { proportion 0.33333; }
+
+    open-on-workspace "coms"
+}
+window-rule {
+    match app-id="steam"
+
+    open-focused false
+}
+window-rule {
+    match app-id="steam"
+    match app-id="Cartridges"
+    match app-id="solaar"
+    match app-id="net.lutris.Lutris"
+
+    default-column-width { proportion 0.33333; }
+    open-on-workspace "gaming"
+}
+window-rule {
+    match app-id="Cartridges"
+
+    open-fullscreen true
+}
+window-rule {
+    match app-id="mpv"
+
+    opacity 1.0
+}
+window-rule {
+    match app-id="Dunst"
+
+    block-out-from "screencast"
+}
+window-rule {
+    match app-id="qutebrowser"
+
+    default-column-width { proportion 0.33333; }
+}
