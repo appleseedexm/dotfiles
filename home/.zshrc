@@ -102,7 +102,6 @@ function cd_up() {
 # Aliases for common commands
 alias nv="nvim . "
 alias paqi="paru -Qi | grep -i name"
-alias sunshine-present="sunshine controller=disabled keyboard=disabled mouse=disabled"
 alias today="tmux new-session 'nvim -c ObsidianToday'"
 alias cfniri="nvim $XDG_CONFIG_HOME/niri/"
 alias agt="amdgpu_top --dark"
