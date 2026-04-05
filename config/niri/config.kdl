@@ -11,14 +11,19 @@ output "DP-1" {
     // mode custom=true "2560x1440@143.923"
     scale 1
     transform "normal"
-    position x=1440 y=0
+    position x=0 y=0
+
+    variable-refresh-rate
+    focus-at-startup
 }
 output "DP-2" {
     // off
-    mode "2560x1440@143.923"
+    mode "2560x1440@144.000"
     scale 1
-    transform "normal"
-    position x=0 y=0
+    transform "90"
+    position x=3440 y=-720
+
+    variable-refresh-rate
 
     layout{
         empty-workspace-above-first
