@@ -335,7 +335,8 @@ c.fonts.default_size = '12pt'
 c.fonts.hints = 'bold 12pt default_family'
 
 # Bindings for normal mode
-config.bind(';m', 'hint links spawn streamlink -p mpv {hint-url} best')
+config.bind(';m', 'hint links spawn mpv {hint-url}')
+config.bind(';n', 'hint links spawn streamlink -p mpv {hint-url} best')
 config.bind(';p', 'hint links fill :open -p {hint-url}')
 config.bind('<Ctrl+Space>', 'mode-enter passthrough')
 config.bind('<Ctrl+e>', 'config-cycle tabs.show always never')
@@ -348,7 +349,6 @@ config.bind('<Space>sap', 'cmd-set-text -s :open -t archpackages')
 config.bind('<Space>sau', 'cmd-set-text -s :open -t aursearch')
 config.bind('<Space>sgh', 'cmd-set-text -s :open -t githubsearch')
 config.bind('<Space>syt', 'cmd-set-text -s :open -t youtubesearch')
-config.bind('M', 'hint links spawn mpv {hint-url}')
 
 # Bindings for caret mode
 config.bind('<Ctrl+Space>', 'mode-leave', mode='caret')
