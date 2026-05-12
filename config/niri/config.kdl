@@ -74,5 +74,3 @@ spawn-sh-at-startup "gsettings set org.gnome.desktop.interface color-scheme 'pre
 
 spawn-sh-at-startup "niriusd"
 
-spawn-sh-at-startup "niri msg action focus-workspace coms"
-spawn-sh-at-startup "niri msg action focus-workspace one"
