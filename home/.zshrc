@@ -34,6 +34,10 @@ autoload -U compinit; compinit
 
 # Starship
 eval "$(starship init zsh)"
+function set_win_title(){
+    echo -ne "\033]0;$TERM - $PWD \007"
+}
+precmd_functions+=(set_win_title)
 
 # zsh-vi-mode
 source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
