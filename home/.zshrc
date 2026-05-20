@@ -35,7 +35,9 @@ autoload -U compinit; compinit
 # Starship
 eval "$(starship init zsh)"
 function set_win_title(){
-    echo -ne "\033]0;$TERM - $PWD \007"
+    local prefix=
+    if [ -z $TMUX ]; then prefix="$TERM - "; fi
+    echo -ne "\033]0;$prefix$PWD \007"
 }
 precmd_functions+=(set_win_title)
 
