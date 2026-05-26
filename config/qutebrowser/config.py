@@ -84,6 +84,11 @@ config.set('content.cookies.accept', 'all', 'chrome-devtools://*')
 #   - never: Don't accept cookies at all.
 config.set('content.cookies.accept', 'all', 'devtools://*')
 
+# Enable quirks (such as faked user agent headers) needed to get
+# specific sites to work properly.
+# Type: Bool
+c.content.site_specific_quirks.enabled = False
+
 # Enable the ad/host blocker
 # Type: Bool
 c.content.blocking.enabled = True
