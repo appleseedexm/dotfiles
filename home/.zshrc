@@ -119,6 +119,7 @@ alias s="rg_fzf_nvim"
 alias o="xdg-open"
 alias q="$HOME/.scripts/default-browser.sh"
 alias dh="dirs -v"
+alias gi="grep -i"
 
 alias l='ls -lah'
 alias la='ls -lAh'
