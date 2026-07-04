@@ -97,7 +97,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 # ripgrep in dir and pipe to nvim
 function rg_fzf_nvim(){
-  rg $1 | fzf | grep -E -o '^[^:]+' | xargs nvim
+  rg -i $1 | fzf | grep -E -o '^[^:]+' | xargs nvim
 }
 
 # cd multiple folders up
