@@ -170,6 +170,6 @@ binds {
 
     Mod+P { spawn-sh "sh $XDG_CONFIG_HOME/niri/scripts/pass.sh"; }
 
-    Mod+Ctrl+W { spawn-sh "niri msg output DP-1 scale 2"; }
+    Mod+Ctrl+W { spawn-sh "niri msg output DP-1 scale 1.5"; }
     Mod+Ctrl+S { spawn-sh "niri msg output DP-1 scale 1"; }
 }
