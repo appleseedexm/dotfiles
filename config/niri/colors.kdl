@@ -3,6 +3,12 @@ layout {
         active-gradient from="#D699B6" to="#7FBBB3" angle=-45 in="oklch"   // relative-to="workspace-view"
         inactive-gradient from="#3A464C" to="#5C6A72" angle=45 // relative-to="workspace-view"
     }
+    border {
+        // inactive-gradient from="#D699B6" to="#7FBBB3" angle=-45 
+        // active-gradient from="#DF69BA" to="#3A94C5" angle=-45 // relative-to="workspace-view"
+        active-color "#DF69BA"
+        inactive-color "#D3C6AA"
+    }
     shadow {
         color "#333C43"
     }

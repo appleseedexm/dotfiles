@@ -10,19 +10,20 @@
 }
 
 window#waybar {
-    /*background: rgba(21, 18, 27, 0);*/
-    background: linear-gradient(to bottom,
-            rgba(51, 60, 67, 0.7),
-            rgba(51, 60, 67, 0.7),
-            rgba(51, 60, 67, 0.7),
-            rgba(51, 60, 67, 0.7),
-            rgba(51, 60, 67, 0.7),
-            rgba(51, 60, 67, 0.7),
-            rgba(51, 60, 67, 0.7),
-            rgba(51, 60, 67, 0.7),
-            rgba(51, 60, 67, 0.5),
-            rgba(51, 60, 67, 0.2),
-            rgba(51, 60, 67, 0.0));
+    background: rgba(51, 60, 67, 0.7);
+
+    /* background: linear-gradient(to bottom, */
+    /*         rgba(51, 60, 67, 0.7), */
+    /*         rgba(51, 60, 67, 0.7), */
+    /*         rgba(51, 60, 67, 0.7), */
+    /*         rgba(51, 60, 67, 0.7), */
+    /*         rgba(51, 60, 67, 0.7), */
+    /*         rgba(51, 60, 67, 0.7), */
+    /*         rgba(51, 60, 67, 0.7), */
+    /*         rgba(51, 60, 67, 0.7), */
+    /*         rgba(51, 60, 67, 0.5), */
+    /*         rgba(51, 60, 67, 0.2), */
+    /*         rgba(51, 60, 67, 0.0)); */
 }
 
 
@@ -47,7 +48,7 @@ window#waybar {
 #disk,
 #custom-control-center,
 #network {
-    margin: 2px 0px 12px;
+    margin: 2px 0px 2px;
     padding: 4px 4px;
     opacity: 1;
 }
