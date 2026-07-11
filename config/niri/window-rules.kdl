@@ -1,6 +1,7 @@
 layer-rule {
     match namespace="^hyprpaper$"
     match namespace="^awww-daemon$"
+    match namespace="^linux-wallpaperengine$"
     
     place-within-backdrop true
 }
@@ -9,6 +10,10 @@ window-rule {
     opacity 0.85
     geometry-corner-radius 0
     clip-to-geometry true
+
+    background-effect {
+        blur true
+    }
 }
 window-rule {
     exclude app-id="foot"
@@ -31,6 +36,12 @@ window-rule {
     open-focused false
 }
 window-rule {
+    match app-id="discord"
+    match app-id="^steam$"
+
+    draw-border-with-background false
+}
+window-rule {
     match app-id="teamspeak-client"
     match app-id="WebCord"
     match app-id="discord"
@@ -42,12 +53,7 @@ window-rule {
     open-on-workspace "coms"
 }
 window-rule {
-    match app-id="steam"
-
-    open-focused false
-}
-window-rule {
-    match app-id="steam"
+    match app-id="^steam$"
     match app-id="Cartridges"
     match app-id="solaar"
     match app-id="net.lutris.Lutris"
