@@ -1,4 +1,16 @@
 layout {
+
+    insert-hint {
+        color "#DBBC7F33"
+    }
+    tab-indicator {
+        position "top"
+        gap 0
+        length total-proportion=1.0
+        place-within-column
+        active-color "#DF69BAAA"
+        inactive-color "#D3C6AAAA"
+    }
     focus-ring {
         active-gradient from="#D699B6" to="#7FBBB3" angle=-45 in="oklch"   // relative-to="workspace-view"
         inactive-gradient from="#3A464C" to="#5C6A72" angle=45 // relative-to="workspace-view"
@@ -6,8 +18,8 @@ layout {
     border {
         // inactive-gradient from="#D699B6" to="#7FBBB3" angle=-45 
         // active-gradient from="#DF69BA" to="#3A94C5" angle=-45 // relative-to="workspace-view"
-        active-color "#DF69BA"
-        inactive-color "#D3C6AA"
+        active-color "#DF69BAAA"
+        inactive-color "#D3C6AAAA"
     }
     shadow {
         color "#333C43"
