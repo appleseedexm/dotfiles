@@ -128,7 +128,7 @@ alias ls='ls -G'
 alias lsa='ls -lah'
 if command -v eza > /dev/null; then
     alias ls="eza -l --group-directories-first"
-    alias ld="l --sort date"
+    alias lsd="l --sort date"
 fi
 
 # Load private configuration if it exists
