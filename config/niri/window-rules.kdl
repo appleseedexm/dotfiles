@@ -7,7 +7,7 @@ layer-rule {
 }
 
 window-rule {
-    opacity 0.85
+    opacity 0.80
     geometry-corner-radius 0
     clip-to-geometry true
 
@@ -38,6 +38,7 @@ window-rule {
 window-rule {
     match app-id="discord"
     match app-id="^steam$"
+    match app-id="^obsidian$"
 
     draw-border-with-background false
 }
@@ -78,6 +79,7 @@ window-rule {
 }
 window-rule {
     match app-id="qutebrowser"
+    match app-id="^slack$"
 
     default-column-width { proportion 0.33333; }
 }
