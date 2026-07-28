@@ -89,6 +89,14 @@ config.set('content.cookies.accept', 'all', 'devtools://*')
 # Type: Bool
 c.content.site_specific_quirks.enabled = False
 
+# Allow websites to request geolocations.
+# Type: BoolAsk
+# Valid values:
+#   - true
+#   - false
+#   - ask
+config.set('content.geolocation', False, 'https://www.just-eat.ch')
+
 # Enable the ad/host blocker
 # Type: Bool
 c.content.blocking.enabled = True
@@ -174,7 +182,7 @@ config.set('content.register_protocol_handler', False, 'https://mail.google.com?
 #   - true
 #   - false
 #   - ask
-config.set('content.register_protocol_handler', True, 'https://outlook.live.com?mailtouri=%25s')
+config.set('content.register_protocol_handler', False, 'https://outlook.live.com?mailtouri=%25s')
 
 # Allow websites to register protocol handlers via
 # `navigator.registerProtocolHandler`.
@@ -344,11 +352,11 @@ config.bind('<Ctrl+p>', 'cmd-set-text -s :open -p')
 config.bind('<Space>ccs', 'config-source config.py')
 config.bind('<Space>ccw', 'config-write-py config.py --force')
 config.bind('<Space>r', 'spawn --userscript readability-js')
-config.bind('<Space>sah', 'cmd-set-text -s :open -t archhelp')
-config.bind('<Space>sap', 'cmd-set-text -s :open -t archpackages')
-config.bind('<Space>sau', 'cmd-set-text -s :open -t aursearch')
-config.bind('<Space>sgh', 'cmd-set-text -s :open -t githubsearch')
-config.bind('<Space>syt', 'cmd-set-text -s :open -t youtubesearch')
+config.bind('<Space>sah', 'cmd-set-text -s :open -t archhelp ')
+config.bind('<Space>sap', 'cmd-set-text -s :open -t archpackages ')
+config.bind('<Space>sau', 'cmd-set-text -s :open -t aursearch ')
+config.bind('<Space>sgh', 'cmd-set-text -s :open -t githubsearch ')
+config.bind('<Space>syt', 'cmd-set-text -s :open -t youtubesearch ')
 
 # Bindings for caret mode
 config.bind('<Ctrl+Space>', 'mode-leave', mode='caret')
