@@ -286,7 +286,7 @@ c.tabs.tabs_are_windows = True
 # the search engine name to the search term, e.g. `:open google
 # qutebrowser`.
 # Type: Dict
-c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}', 'aursearch': 'https://aur.archlinux.org/packages?K={}', 'archhelp': 'https://wiki.archlinux.org/index.php?search={}', 'archpackages': 'https://archlinux.org/packages/?q={}', 'youtubesearch': 'https://www.youtube.com/results?search_query={}', 'githubsearch': 'https://github.com/search?q={}'}
+c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}', 'aursearch': 'https://aur.archlinux.org/packages?K={}', 'archhelp': 'https://wiki.archlinux.org/index.php?search={}', 'archpackages': 'https://archlinux.org/packages/?q={}', 'youtubesearch': 'https://www.youtube.com/results?search_query={}', 'protondbsearch': 'https://www.protondb.com/search?q={}', 'githubsearch': 'https://github.com/search?q={}'}
 
 # Format to use for the window title. The same placeholders like for
 # `tabs.title.format` are defined.
@@ -356,6 +356,7 @@ config.bind('<Space>sah', 'cmd-set-text -s :open -t archhelp ')
 config.bind('<Space>sap', 'cmd-set-text -s :open -t archpackages ')
 config.bind('<Space>sau', 'cmd-set-text -s :open -t aursearch ')
 config.bind('<Space>sgh', 'cmd-set-text -s :open -t githubsearch ')
+config.bind('<Space>spd', 'cmd-set-text -s :open -t protondbsearch ')
 config.bind('<Space>syt', 'cmd-set-text -s :open -t youtubesearch ')
 
 # Bindings for caret mode
