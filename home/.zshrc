@@ -105,12 +105,16 @@ function cd_up() {
   cd $(printf "%0.s../" $(seq 1 $1 ));
 }
 
+# man switch
+function man_switch() { man -P "less -p \"^ +$2\"" $1 }
+
 # Aliases for common commands
 alias nv="nvim . "
 alias paqi="paru -Qi | grep -i name"
 alias today="tmux new-session 'nvim -c ObsidianToday'"
 alias cfniri="nvim $XDG_CONFIG_HOME/niri/"
 alias agt="amdgpu_top --dark"
+alias mans="man_switch"
 alias 'cd..'='cd_up'
 alias 'cd...'='cd_up 2'
 alias 'cd....'='cd_up 3'
