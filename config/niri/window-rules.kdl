@@ -31,9 +31,13 @@ window-rule {
 window-rule {
     match app-id="Proton Pass"
 
-    open-on-workspace "startup"
     block-out-from "screencast"
-    open-focused false
+
+    default-floating-position x=0 y=0 relative-to="bottom"
+    default-column-width { fixed 400; }
+    default-window-height { fixed 150; }
+    open-floating true
+    open-focused true
 }
 window-rule {
     match app-id="discord"
