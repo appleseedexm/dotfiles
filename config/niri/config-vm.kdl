@@ -25,8 +25,6 @@ binds {
 }
 
 // autostart
-spawn-at-startup "waybar"
-spawn-at-startup "dunst"
 spawn-sh-at-startup "sh $XDG_CONFIG_HOME/niri/scripts/idle.sh"
 spawn-sh-at-startup "wbg ~/Pictures/background.png"
 
