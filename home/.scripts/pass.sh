@@ -1,9 +1,12 @@
 #!/bin/bash
 
-
-
 VAULT=Personal
 
+while getopts "w" flag; do
+    case "${flag}" in
+        w) VAULT=Work ;;
+    esac
+done
 
 TITLE=$(pass-cli item list --vault-name $VAULT --output json | jq -r ".items | .[] | .title" | fuzzel --dmenu)
 
@@ -22,10 +25,11 @@ if [ -n "$TITLE" ]; then
 
     if [[ -n $HASPASSWORD ]]; then
 
-        echo "yes"
         wl-copy $HASPASSWORD && notify-send "Proton" "Copied!" && sleep 5 && wl-copy --clear &
     else
 
-        echo "no"
+        notify-send "Proton" "No password found!"
     fi
 fi
+
+
