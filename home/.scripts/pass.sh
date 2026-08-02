@@ -8,20 +8,57 @@ while getopts "w" flag; do
     esac
 done
 
+function copy(){
+    VALUE=$1
+    TYPE=$2
+    if [[ -n $VALUE ]]; then
+        wl-copy $VALUE && notify-send "Proton" "$TYPE copied!" && sleep 5 && wl-copy --clear &
+    else
+        notify-send "Proton" "No $TYPE found!"
+    fi
+}
+
+function warn(){
+    TYPE=$1
+    notify-send --urgency=critical --expire-time=3000 "Proton" "Could not find $TYPE"
+}
 TITLE=$(pass-cli item list --vault-name $VAULT --output json | jq -r ".items | .[] | .title" | fuzzel --dmenu)
 
 if [ -n "$TITLE" ]; then
 
-    HASPASSWORD=$(pass-cli item view "pass://$VAULT/$TITLE/password")
+    # HASPASSWORD=$(pass-cli item view "pass://$VAULT/$TITLE/username")
+    # HASPASSWORD=$(pass-cli item view "pass://$VAULT/$TITLE/email")
 
-    # ENTRY=$(pass-cli item view "pass://$VAULT/$TITLE" --output json | jq -r ".item | .content " )
-    # HASPASSWORD=$(echo $ENTRY | jq -r ".note? | select(. != null) ")
+    sleep 15 && wl-copy --clear &
 
-    if [[ -n $HASPASSWORD ]]; then
-        wl-copy $HASPASSWORD && notify-send "Proton" "Copied!" && sleep 5 && wl-copy --clear &
-    else
-        notify-send "Proton" "No password found!"
+    ENTRY=$(pass-cli item view "pass://$VAULT/$TITLE" --output json | jq -r ".item | .content | .content | .Login " )
+
+
+    USERNAME=$(echo $ENTRY | jq -r ".username? | select(. != null) ")
+    if [ -z $USERNAME ]; then
+        USERNAME=$(echo $ENTRY | jq -r ".email? | select(. != null) ")
     fi
-fi
 
+    echo 1
+    echo $USERNAME
+    echo 1
+
+    if [ -n "$USERNAME" ]; then
+        copy $USERNAME user
+    else
+        warn user
+    fi
+
+    PASSWORD=$(echo $ENTRY | jq -r ".password? | select(. != null) ")
+
+    if [ -n "$PASSWORD" ]; then
+        if [ -n "$USERNAME" ]; then
+            sleep 5
+        fi
+        copy $PASSWORD secret
+    else
+        warn secret
+    fi
+
+fi
 
