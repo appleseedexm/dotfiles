@@ -170,6 +170,8 @@ binds {
 
     Mod+P { spawn-sh "sh $HOME/.scripts/pass.sh"; }
     Mod+Shift+P { spawn-sh "sh $HOME/.scripts/pass.sh -w"; }
+    Mod+Y { spawn-sh "sh $HOME/.scripts/pass.sh -u"; }
+    Mod+Shift+Y { spawn-sh "sh $HOME/.scripts/pass.sh -uw"; }
     Mod+Ctrl+P { spawn-sh "sh $XDG_CONFIG_HOME/niri/scripts/pass.sh"; }
 
     Mod+Ctrl+W { spawn-sh "niri msg output DP-1 scale 1.5"; }
