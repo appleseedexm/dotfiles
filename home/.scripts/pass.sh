@@ -1,6 +1,7 @@
 #!/bin/bash
 
 VAULT=Personal
+TIMER=5
 
 while getopts "w" flag; do
     case "${flag}" in
@@ -12,7 +13,7 @@ function copy(){
     VALUE=$1
     TYPE=$2
     if [[ -n $VALUE ]]; then
-        wl-copy $VALUE && notify-send "Proton" "$TYPE copied!" && sleep 5 && wl-copy --clear &
+        wl-copy $VALUE && notify-send "Proton" "$TYPE copied!" && sleep $TIMER && wl-copy --clear &
     else
         notify-send "Proton" "No $TYPE found!"
     fi
@@ -22,14 +23,12 @@ function warn(){
     TYPE=$1
     notify-send --urgency=critical --expire-time=3000 "Proton" "Could not find $TYPE"
 }
+
 TITLE=$(pass-cli item list --vault-name $VAULT --output json | jq -r ".items | .[] | .title" | fuzzel --dmenu)
 
 if [ -n "$TITLE" ]; then
 
-    # HASPASSWORD=$(pass-cli item view "pass://$VAULT/$TITLE/username")
-    # HASPASSWORD=$(pass-cli item view "pass://$VAULT/$TITLE/email")
-
-    sleep 15 && wl-copy --clear &
+    # sleep 15 && wl-copy --clear &
 
     ENTRY=$(pass-cli item view "pass://$VAULT/$TITLE" --output json | jq -r ".item | .content | .content | .Login " )
 
@@ -38,10 +37,6 @@ if [ -n "$TITLE" ]; then
     if [ -z $USERNAME ]; then
         USERNAME=$(echo $ENTRY | jq -r ".email? | select(. != null) ")
     fi
-
-    echo 1
-    echo $USERNAME
-    echo 1
 
     if [ -n "$USERNAME" ]; then
         copy $USERNAME user
@@ -53,7 +48,7 @@ if [ -n "$TITLE" ]; then
 
     if [ -n "$PASSWORD" ]; then
         if [ -n "$USERNAME" ]; then
-            sleep 5
+            sleep $TIMER
         fi
         copy $PASSWORD secret
     else
