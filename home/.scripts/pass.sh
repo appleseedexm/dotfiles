@@ -3,9 +3,11 @@
 VAULT=Personal
 TIMER=5
 TIMER_PLUS_1=6
+USER=false
 
-while getopts "w" flag; do
+while getopts "uw" flag; do
     case "${flag}" in
+        u) USER=true ;;
         w) VAULT=Work ;;
     esac
 done
@@ -33,20 +35,20 @@ if [ -n "$TITLE" ]; then
 
     ENTRY=$(pass-cli item view "pass://$VAULT/$TITLE" --output json | jq -r ".item | .content | .content | .Login " )
 
+    if [ $USER = true ]; then
+        USERNAME=$(echo $ENTRY | jq -r ".username? | select(. != null) ")
+        if [ -z $USERNAME ]; then
+            USERNAME=$(echo $ENTRY | jq -r ".email? | select(. != null) ")
+        fi
 
-    USERNAME=$(echo $ENTRY | jq -r ".username? | select(. != null) ")
-    if [ -z $USERNAME ]; then
-        USERNAME=$(echo $ENTRY | jq -r ".email? | select(. != null) ")
-    fi
-
-    if [ -n "$USERNAME" ]; then
-        copy $USERNAME user
-    else
-        warn user
+        if [ -n "$USERNAME" ]; then
+            copy $USERNAME user
+        else
+            warn user
+        fi
     fi
 
     PASSWORD=$(echo $ENTRY | jq -r ".password? | select(. != null) ")
-
     if [ -n "$PASSWORD" ]; then
         if [ -n "$USERNAME" ]; then
             sleep $TIMER_PLUS_1
