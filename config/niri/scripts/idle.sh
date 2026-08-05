@@ -1,7 +1,6 @@
 #!/bin/bash
 /usr/bin/swayidle -w \
+    timeout 300 'sh $XDG_CONFIG_HOME/niri/scripts/lock.sh' \
+    timeout 305 'sh $HOME/.scripts/mute.sh -s' \
     timeout 305 'niri msg action power-off-monitors' \
-    timeout 300 'sh $HOME/.scripts/mute.sh -s' \
-    timeout 300 'sh $XDG_CONFIG_HOME/niri/scripts/pass.sh -c' \
-    timeout 300 'swaylock -f' \
     before-sleep 'swaylock -f'

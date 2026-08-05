@@ -1,3 +1,6 @@
 #!/bin/bash
-sleep 2
+
+sh $XDG_CONFIG_HOME/niri/scripts/pass.sh -c
+pass-cli session lock
+
 swaylock -f
