@@ -18,6 +18,7 @@ mpv
 awww
 grimshot
 sunshine
+proton-pass (UI & CLI)
 ```
 
 ### non-wayland
@@ -49,6 +50,7 @@ yazi
 tmux
 tmux-sessionizer
 neovim (nvim)
+expect (required for pass-cli session unlock)
 ```
 
 ### zsh
