@@ -21,7 +21,7 @@ fi
 
 [ -z "$QUTE_URL" ] && QUTE_URL='https://duckduckgo.com'
 
-url=$(printf  "${SHORTCUTS//\|/\\n}%s" "$(sqlite3 -separator ' - ' "$QUTE_DATA_DIR/history.sqlite" 'select title, url from CompletionHistory order by last_atime desc' | cat "$QUTE_CONFIG_DIR/quickmarks" - )"  | fuzzel --log-level=info --dmenu -l 15 )
+url=$(printf  "${SHORTCUTS//\|/\\n}%s" "$(sqlite3 -separator ' ' "$QUTE_DATA_DIR/history.sqlite" "select  substr(printf('%-80s',title), 0,80), url from CompletionHistory order by last_atime desc" | cat "$QUTE_CONFIG_DIR/quickmarks" - )" | fuzzel --dmenu -l 15)
 url=$(echo "$url" | sed -E 's/[^ ]+ +//g' | grep -E "https?:" || echo "$url")
 
 [ -z "${url// }" ] && exit
