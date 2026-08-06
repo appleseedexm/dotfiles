@@ -27,7 +27,23 @@ function warn(){
     notify-send --urgency=critical --expire-time=3000 "Proton" "Could not find $TYPE"
 }
 
-TITLE=$(pass-cli item list --vault-name $VAULT --output json | jq -r ".items | .[] | .title" | fuzzel --dmenu)
+function get_items(){
+    ITEMS=$(pass-cli item list --vault-name $VAULT --output json 2>/dev/null)
+}
+
+
+if ! get_items ; then
+    s="$(fuzzel --dmenu -l 0 --prompt="% " --password)"
+    expect <<EOF
+        spawn pass-cli session unlock
+        expect -re "Enter lock code:"
+        send "$s\r"
+        expect eof
+EOF
+    get_items
+fi
+
+TITLE=$(echo $ITEMS | jq -r ".items | .[] | .title" | fuzzel --dmenu)
 
 if [ -n "$TITLE" ]; then
 
