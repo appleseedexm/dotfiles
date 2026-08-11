@@ -27,10 +27,23 @@ function warn(){
     notify-send --urgency=critical --expire-time=3000 "Proton" "Could not find $TYPE"
 }
 
+function get_info(){
+    INFO=$(pass-cli info --output json 2>/dev/null)
+}
+
 function get_items(){
     ITEMS=$(pass-cli item list --vault-name $VAULT --output json 2>/dev/null)
 }
 
+if ! get_info ; then
+    USER="$(fuzzel --dmenu -l 0 --prompt="%email ")"
+    export PROTON_PASS_PASSWORD="$(fuzzel --dmenu -l 0 --prompt="%pass " --password)"
+    export PROTON_PASS_EXTRA_PASSWORD="$(fuzzel --dmenu -l 0 --prompt="%extra " --password)"
+    if ! pass-cli login --interactive $USER ; then
+        notify-send --urgency=critical --expire-time=3000 "Proton" "Login unsuccessful!"
+        exit 1
+    fi
+fi
 
 if ! get_items ; then
     s="$(fuzzel --dmenu -l 0 --prompt="% " --password)"
