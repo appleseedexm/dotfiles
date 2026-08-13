@@ -1,3 +1,10 @@
+// Layer
+layer-rule {
+    match namespace="^notifications$"
+    match namespace="^launcher$"
+
+    block-out-from "screencast"
+}
 layer-rule {
     match namespace="^hyprpaper$"
     match namespace="^awww-daemon$"
@@ -5,7 +12,7 @@ layer-rule {
     
     place-within-backdrop true
 }
-
+// General
 window-rule {
     opacity 0.80
     geometry-corner-radius 0
@@ -23,6 +30,7 @@ window-rule {
 
     open-focused false
 }
+// Windows
 window-rule {
     match app-id="obsidian"
 
@@ -61,7 +69,6 @@ window-rule {
 }
 window-rule {
     match app-id="^steam$"
-    match app-id="Cartridges"
     match app-id="solaar"
     match app-id="net.lutris.Lutris"
 
@@ -72,21 +79,21 @@ window-rule {
     match app-id="Cartridges"
 
     open-fullscreen true
+    open-focused true
+    open-on-workspace "gaming"
 }
 window-rule {
     match app-id="mpv"
 
     opacity 1.0
 }
-layer-rule {
-    match namespace="^notifications$"
-    match namespace="^launcher$"
+window-rule {
+    match app-id="^slack$"
 
-    block-out-from "screencast"
+    open-on-workspace "media"
 }
 window-rule {
     match app-id="qutebrowser"
-    match app-id="^slack$"
 
     default-column-width { proportion 0.33333; }
 }
