@@ -18,6 +18,8 @@ window-rule {
 window-rule {
     exclude app-id="foot"
     exclude app-id="qutebrowser"
+    exclude app-id="gcr-prompter"
+    exclude app-id="DBeaver"
 
     open-focused false
 }
