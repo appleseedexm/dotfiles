@@ -291,7 +291,7 @@ c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}', 'aursearch': '
 # Format to use for the window title. The same placeholders like for
 # `tabs.title.format` are defined.
 # Type: FormatString
-c.window.title_format = '{perc}{current_title}{title_sep}{host}{title_sep}qutebrowser'
+c.window.title_format = '{perc}{current_title}{title_sep}{host}{title_sep}qutebrowser-main'
 
 # Value to use for `prefers-color-scheme:` for websites. The "light"
 # value is only available with QtWebEngine 5.15.2+. On older versions,
