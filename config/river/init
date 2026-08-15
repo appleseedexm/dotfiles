@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ "$WAYLAND_DISPLAY" = "wayland-1" ]; then
+	dbus-update-activation-environment WAYLAND_DISPLAY DISPLAY XDG_CURRENT_DESKTOP PATH
+fi
+
+kanshi &
+awww-daemon &
+easyeffect -gapplication-service
