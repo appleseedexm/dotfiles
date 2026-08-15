@@ -5,6 +5,8 @@ argenctl binding set normal Super Return exec "foot"
 
 # Bindings
 argenctl binding set normal Super D exec "fuzzel"
+argenctl binding set normal Super+Shift N sh "sh $HOME/.scripts/idle.sh"
+argenctl binding set normal Super+Shift M sh "sh $HOME/.scripts/mute.sh"
 
 # Reload config
 argenctl binding set normal Super+Shift C exec "$0"
@@ -118,3 +120,6 @@ argenctl rule add float --app-id "*my-app"
 argenctl rule add no-tearing
 argenctl rule add tearing --title "my-game*"
 
+
+sh $HOME/.scripts/idle.sh
+sh $HOME/.scripts/mute.sh
