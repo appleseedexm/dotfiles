@@ -1,5 +1,5 @@
 CMD="swayidle"
-CMD_EXEC="sh $XDG_CONFIG_HOME/niri/scripts/idle.sh"
+CMD_EXEC="sh $XDG_CONFIG_HOME/kwm/scripts/idle.sh"
 
 OUTPUT_IDLE_RUN_STATE=false
 
@@ -35,7 +35,8 @@ main() {
         pkill "${CMD}"
     fi
 
-    waybar_sig
+    # waybar_sig
+
 }
 
 

@@ -2,16 +2,16 @@
     // environment variables
     // used by processes spawned by kwm
     .env = .{
-        // .{ "key", "value" },
+        // .{ "XDG_CURRENT_DESKTOP", "river" },
     },
 
     // working direction of processes spawned by kwm
     .working_directory = .home,
 
     .startup_cmds = .{
-        .{ "sh", "$HOME/.scripts/mute.sh" },
+        .{ "sh", "$HOME.scripts/mute.sh" },
         .{ "sh", "$XDG_CONFIG_HOME/kwm/scripts/idle.sh" },
-        .{ "sh", "$XDG_CONFIG_HOME/kwm/scripts/lock.sh" },
+        .{ "easyeffect", "--gapplication-service" },
     },
 
     // null
@@ -111,13 +111,11 @@
             },
         },
         // set null to disable status part
-        .status = .{
-            .data = .{ .text = "^#ff0000ffk^#00ff00ffw^#0000ffffm" }, // .stdin or .{ .fifo = "fifo file path" }, could use ^#RGBA to switch text color, and use ^#! to switch back to default color
+        .status = .{ .fifo = "${XDG_RUNTIME_DIR}/river.fifo" },
 
-            .click = .{
-                .middle = .{ .spawn = .{ .argv = .{"foot"} } },
-            },
-        },
+        // .status = .{
+        //     .fifo = "${XDG_RUNTIME_DIR}/river.fifo", // .stdin or .{ .fifo = "fifo file path" }, could use ^#RGBA to switch text color, and use ^#! to switch back to default color
+        // },
 
         // override colors
         .override_colors = .{
@@ -210,8 +208,8 @@
         .tile = .{
             .nmaster = 1,
             .mfact = 0.55,
-            .inner_gap = 0,
-            .outer_gap = 0,
+            .inner_gap = 2,
+            .outer_gap = 2,
 
             // .left
             // .right
@@ -677,15 +675,15 @@
                     },
                 },
             },
-            .{
-                .keysym = "e",
-                .modifiers = .{ .mod4 = true, .shift = true },
-                .event = .{
-                    .click = .{
-                        .pressed = .toggle_maximize,
-                    },
-                },
-            },
+            // .{
+            //     .keysym = "e",
+            //     .modifiers = .{ .mod4 = true, .shift = true },
+            //     .event = .{
+            //         .click = .{
+            //             .pressed = .toggle_maximize,
+            //         },
+            //     },
+            // },
             .{
                 .keysym = "space",
                 .modifiers = .{ .mod4 = true },
@@ -1063,6 +1061,51 @@
                         },
                     },
                 },
+            },
+
+            // Mod+Shift+CTRL+P { spawn-sh "sh $XDG_CONFIG_HOME/niri/scripts/lock.sh"; }
+            // Mod+M { spawn-sh "sh $HOME/.scripts/mute.sh"; }
+            // Mod+Shift+M { spawn-sh "sh $HOME/.scripts/dnd.sh"; }
+            // Mod+Shift+N { spawn-sh "sh $HOME/.scripts/idle.sh"; }
+            // Mod+Shift+O { spawn-sh "sh $XDG_CONFIG_HOME/niri/scripts/focus_window.sh"; }
+            // Mod+Ctrl+O { spawn-sh "sh $XDG_CONFIG_HOME/niri/scripts/fetch_window.sh"; }
+            // Mod+P { spawn-sh "sh $HOME/.scripts/pass.sh"; }
+            // Mod+Shift+P { spawn-sh "sh $HOME/.scripts/pass.sh -w"; }
+            // Mod+Y { spawn-sh "sh $HOME/.scripts/pass.sh -u"; }
+            // Mod+Shift+Y { spawn-sh "sh $HOME/.scripts/pass.sh -uw"; }
+            // Mod+Ctrl+P { spawn-sh "sh $XDG_CONFIG_HOME/niri/scripts/pass.sh"; }
+            // XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
+            // XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
+            // XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+            // XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+            // XF86AudioPlay        allow-when-locked=true { spawn-sh "playerctl play-pause --player=tidal-hifi"; }
+            // XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
+            // XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
+            // Alt+F10 { spawn-sh "killall -SIGUSR1 gpu-screen-recorder && sleep 0.5 && notify-send -u low -- 'GPU Screen Recorder' 'Replay saved'"; }
+            .{
+                .keysym = "f10",
+                .modifiers = .{ .mod1 = true },
+                .event = .{ .click = .{ .pressed = .{ .spawn_shell = .{ .cmd = "killall -SIGUSR1 gpu-screen-recorder && sleep 0.5 && notify-send -u low -- 'GPU Screen Recorder' 'Replay saved'" } } } },
+            },
+            .{
+                .keysym = "e",
+                .modifiers = .{ .mod4 = true },
+                .event = .{ .click = .{ .pressed = .{ .spawn_shell = .{ .cmd = "sh $HOME/.scripts/qute.sh" } } } },
+            },
+            .{
+                .keysym = "e",
+                .modifiers = .{ .mod4 = true, .shift = true },
+                .event = .{ .click = .{ .pressed = .{ .spawn_shell = .{ .cmd = "sh $HOME/.scripts/qute.sh -w" } } } },
+            },
+            .{
+                .keysym = "n",
+                .modifiers = .{ .mod4 = true, .shift = true },
+                .event = .{ .click = .{ .pressed = .{ .spawn_shell = .{ .cmd = "sh $HOME/.scripts/idle.sh" } } } },
+            },
+            .{
+                .keysym = "d",
+                .modifiers = .{ .mod4 = true, .shift = true },
+                .event = .{ .click = .{ .pressed = .{ .spawn_shell = .{ .cmd = "sh $HOME/.scripts/mute.sh" } } } },
             },
         },
 
