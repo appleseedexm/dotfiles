@@ -35,7 +35,7 @@ main() {
         pkill "${CMD}"
     fi
 
-    # waybar_sig
+    waybar_sig
 
 }
 
