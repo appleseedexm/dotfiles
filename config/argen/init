@@ -7,6 +7,16 @@ argenctl binding set normal Super Return exec "foot"
 argenctl binding set normal Super D exec "fuzzel"
 argenctl binding set normal Super+Shift N sh "sh $HOME/.scripts/idle.sh"
 argenctl binding set normal Super+Shift M sh "sh $HOME/.scripts/mute.sh"
+argenctl binding set normal Super E sh "sh $HOME/.scripts/qute.sh"
+argenctl binding set normal Super+Shift E sh "sh $HOME/.scripts/qute.sh -w"
+argenctl binding set normal Super Y sh "sh $HOME/.scripts/pass.sh -u"
+argenctl binding set normal Super+Shift Y sh "sh $HOME/.scripts/pass.sh -uw"
+argenctl binding set normal Super P sh "sh $HOME/.scripts/pass.sh"
+argenctl binding set normal Super+Shift P sh "sh $HOME/.scripts/pass.sh -w"
+
+
+    #Alt+F10 { spawn-sh "killall -SIGUSR1 gpu-screen-recorder && sleep 0.5 && notify-send -u low -- 'GPU Screen Recorder' 'Replay saved'"; }
+
 
 # Reload config
 argenctl binding set normal Super+Shift C exec "$0"
@@ -78,7 +88,7 @@ argenctl binding set normal Super+Shift D sh '
 '
 
 # Adopt all orphans
-argenctl binding set normal Super+Control D sh '
+argenctl binding set normal Super+Shift+Control D sh '
     argenctl window list --json | jq -r ".[] | select(.contexts | length == 0) | .id" | while read -r id; do
         argenctl window attach "$id"
     done
@@ -131,5 +141,5 @@ argenctl rule add no-tearing
 argenctl rule add tearing --title "my-game*"
 
 
-sh $HOME/.scripts/idle.sh
-sh $HOME/.scripts/mute.sh
+# sh $HOME/.scripts/idle.sh
+# sh $HOME/.scripts/mute.sh
