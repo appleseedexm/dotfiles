@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Terminal
-argenctl binding set normal Super Return exec "foot"
+argenctl binding set normal Super Return exec "footclient"
 
 # Bindings
 argenctl binding set normal Super D exec "fuzzel"
@@ -141,5 +141,5 @@ argenctl rule add no-tearing
 argenctl rule add tearing --title "my-game*"
 
 
-# sh $HOME/.scripts/idle.sh
-# sh $HOME/.scripts/mute.sh
+sh $HOME/.scripts/idle.sh
+sh $HOME/.scripts/mute.sh

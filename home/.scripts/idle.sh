@@ -1,5 +1,5 @@
 CMD="swayidle"
-CMD_EXEC="sh $XDG_CONFIG_HOME/kwm/scripts/idle.sh"
+CMD_EXEC="sh $XDG_CONFIG_HOME/argen/scripts/idle.sh"
 
 OUTPUT_IDLE_RUN_STATE=false
 
