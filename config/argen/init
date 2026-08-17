@@ -13,6 +13,10 @@ argenctl binding set normal Super Y sh "sh $HOME/.scripts/pass.sh -u"
 argenctl binding set normal Super+Shift Y sh "sh $HOME/.scripts/pass.sh -uw"
 argenctl binding set normal Super P sh "sh $HOME/.scripts/pass.sh"
 argenctl binding set normal Super+Shift P sh "sh $HOME/.scripts/pass.sh -w"
+argenctl binding set normal Super S sh "grimshot --notify copy area"
+argenctl binding set normal Super+Shift S sh "grimshot --notify copy output"
+argenctl binding set normal Super+Control S sh "grimshot --notify save area"
+argenctl binding set normal Super+Control+Shift S sh "grimshot --notify save output"
 
 
     #Alt+F10 { spawn-sh "killall -SIGUSR1 gpu-screen-recorder && sleep 0.5 && notify-send -u low -- 'GPU Screen Recorder' 'Replay saved'"; }
