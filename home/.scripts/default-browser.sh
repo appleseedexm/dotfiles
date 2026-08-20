@@ -10,9 +10,9 @@ done
 
 DEFAULT_BROWSER="qutebrowser"
 DEFAULT_FLAGS="--target tab --untrusted-args"
-PROFILE_WORK="-B $XDG_DATA_HOME/qutebrowser-work -C $XDG_DATA_HOME/qutebrowser-work/config/load-configs.py"
-PROFILE_DEFAULT=""
-PROFILE=""
+PROFILE_WORK="--desktop-file-name qute-work -B $XDG_DATA_HOME/qutebrowser-work -C $XDG_DATA_HOME/qutebrowser-work/config/load-configs.py"
+PROFILE_DEFAULT="--desktop-file-name qute-main"
+PROFILE=$PROFILE_DEFAULT
 
 PPPID=$(ps -p $PPID -o ppid=)
 PPPCOMMAND=$(ps -o comm= $PPPID)
