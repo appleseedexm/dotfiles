@@ -1,0 +1,186 @@
+#!/bin/sh
+
+# Attribution: Lots of this was heavily inspired by Peter Kaplan's config: https://codeberg.org/pkap/dotfiles/src/branch/master/dot_config/argen/executable_init
+
+# Terminal
+argenctl binding set normal Super Return exec "footclient"
+
+# Bindings
+argenctl binding set normal Super D exec "fuzzel"
+argenctl binding set normal Super+Shift N sh "sh $HOME/.scripts/idle.sh"
+argenctl binding set normal Super+Shift M sh "sh $HOME/.scripts/mute.sh"
+argenctl binding set normal Super+Control M sh "sh $HOME/.scripts/dnd.sh"
+argenctl binding set normal Super E sh "sh $HOME/.scripts/qute.sh"
+argenctl binding set normal Super+Shift E sh "sh $HOME/.scripts/qute.sh -w"
+argenctl binding set normal Super Y sh "sh $HOME/.scripts/pass.sh -u"
+argenctl binding set normal Super+Shift Y sh "sh $HOME/.scripts/pass.sh -uw"
+argenctl binding set normal Super P sh "sh $HOME/.scripts/pass.sh"
+argenctl binding set normal Super+Shift P sh "sh $HOME/.scripts/pass.sh -w"
+argenctl binding set normal Super S sh "grimshot --notify copy area"
+argenctl binding set normal Super+Shift S sh "grimshot --notify copy output"
+argenctl binding set normal Super+Control S sh "grimshot --notify save area"
+argenctl binding set normal Super+Control+Shift S sh "grimshot --notify save output"
+argenctl binding set normal Alt F10 sh "killall -SIGUSR1 gpu-screen-recorder && sleep 0.5 && notify-send -u low -- 'GPU Screen Recorder' 'Replay saved'"
+
+# Reload config
+argenctl binding set normal Super+Shift C exec "$0"
+
+# Window focus and swap
+argenctl binding set normal Super J window focus next
+argenctl binding set normal Super K window focus prev
+argenctl binding set normal Super+Shift J window swap next
+argenctl binding set normal Super+Shift K window swap prev
+
+argenctl binding set normal Super F window fullscreen
+argenctl binding set normal Super W window float
+
+argenctl binding set normal Super X window close
+argenctl binding set normal Super+Shift X window detach
+
+# Output focus and send
+argenctl binding set normal Super Period output focus next
+argenctl binding set normal Super Comma output focus prev
+argenctl binding set normal Super+Shift Period window send next
+argenctl binding set normal Super+Shift Comma window send prev
+
+# Layout
+argenctl binding unset normal Super H 
+argenctl binding unset normal Super L
+argenctl binding set --repeat normal Super+Control H layout set primary-ratio -0.05
+argenctl binding set --repeat normal Super+Control L layout set primary-ratio +0.05
+argenctl binding set --repeat normal Super+Control K layout set secondary-ratio -0.05
+argenctl binding set --repeat normal Super+Control J layout set secondary-ratio +0.05
+argenctl binding set --repeat normal Super Apostrophe window resize width +40
+argenctl binding set --repeat normal Super Semicolon window resize width -40
+argenctl binding set --repeat normal Super+Shift Apostrophe window resize height +40
+argenctl binding set --repeat normal Super+Shift Semicolon window resize height -40
+
+# Pointer
+argenctl pointer-binding set normal Super BTN_LEFT move-window
+argenctl pointer-binding set normal Super BTN_RIGHT resize-window
+argenctl pointer-binding set normal Super BTN_MIDDLE scroll
+
+# Context
+argenctl binding set normal Super+Shift+Control X context close
+argenctl binding set normal Super Tab context switch --last
+
+# Switch contexts interactively
+argenctl binding set normal Super Space sh 'argenctl context switch "$(argenctl context list | fuzzel -d --only-match)"'
+
+# Create new context interactively
+argenctl binding set normal Super+Shift Space sh '
+    set -eu
+    prompt="$(fuzzel -d --prompt-only "new > ")"
+    argenctl context new "$prompt"
+'
+
+# Rename current context interactively
+argenctl binding set normal Super+Control Space sh '
+    set -eu
+    prompt="$(fuzzel -d --prompt-only "rename > ")"
+    argenctl context rename "$prompt"
+'
+
+# Assign currently focused window to be toggled with Super U, I, O
+argenctl binding set normal Super+Shift U sh '
+    set -eu
+    id=$(argenctl window list --json | jq -r ".[] | select(.focused) | .id")
+    argenctl binding set normal Super U window toggle "$id"
+'
+argenctl binding set normal Super+Shift I sh '
+    set -eu
+    id=$(argenctl window list --json | jq -r ".[] | select(.focused) | .id")
+    argenctl binding set normal Super I window toggle "$id"
+'
+argenctl binding set normal Super+Shift O sh '
+    set -eu
+    id=$(argenctl window list --json | jq -r ".[] | select(.focused) | .id")
+    argenctl binding set normal Super O window toggle "$id"
+'
+
+# Attach window interactively
+argenctl binding set normal Super+Shift D sh '
+    set -eu
+    id=$(argenctl window list | fuzzel -d --with-nth 2 --accept-nth 1 --only-match)
+    argenctl window attach "$id"
+'
+
+# Addopt one orphan
+argenctl binding set normal Super+Control D sh '
+    set -eu
+    id=$(argenctl window list --json | jq -r ".[] | select(.contexts | length == 0) |  [[.id , .title ]] | .[] | join(\"\t\")" | fuzzel -d --with-nth 2 --accept-nth 1 --only-match)
+    argenctl window attach "$id"
+'
+
+# Adopt all orphans
+argenctl binding set normal Super+Shift+Control D sh '
+    argenctl window list --json | jq -r ".[] | select(.contexts | length == 0) | .id" | while read -r id; do
+        argenctl window attach "$id"
+    done
+'
+
+# Layouts
+argenctl binding set normal Super Minus layout switch prev
+argenctl binding set normal Super Equal layout switch next
+argenctl binding set normal Super 1 layout switch stacktile
+argenctl binding set normal Super 2 layout switch monocle
+argenctl binding set normal Super 3 layout switch columns
+argenctl binding set normal Super 4 layout switch scrolling
+argenctl binding set normal Super Bracketleft window merge left
+argenctl binding set normal Super Bracketright window merge right
+argenctl binding set normal Super+Shift Bracketleft window split left
+argenctl binding set normal Super+Shift Bracketright window split right
+
+# Audio and brightness controls
+VOL_DEC='wpctl set-volume @DEFAULT_SINK@ 5%-'
+VOL_INC='wpctl set-mute @DEFAULT_SINK@ 0 && wpctl set-volume @DEFAULT_SINK@ --limit 1.5 5%+'
+VOL_TOGGLE='playerctl play-pause --player=tidal-hifi'
+for mode in normal locked; do
+    argenctl binding unset $mode None XF86AudioLowerVolume 
+    argenctl binding unset $mode None XF86AudioRaiseVolume
+    argenctl binding set $mode None XF86AudioPlay sh "$VOL_TOGGLE"
+
+    argenctl binding set $mode None XF86MonBrightnessDown sh "brightnessctl s 5%-"
+    argenctl binding set $mode None XF86MonBrightnessUp sh "brightnessctl s +5%"
+done
+
+# Passthrough mode
+argenctl mode declare passthrough
+argenctl binding set normal Super Grave mode enter passthrough
+argenctl binding set passthrough Super Grave mode enter normal
+
+# Keyboard repeat rate and delay
+argenctl config set repeat 30 200
+
+# Style
+argenctl config set border-width 2
+
+# Colors
+argenctl config set border-color-focused 0xD699B6
+argenctl config set border-color-unfocused 0x3A464C
+argenctl config set border-color-captured 0x5C6A72
+
+# Window rules
+argenctl rule add float --app-id "*my-app"
+argenctl rule add no-tearing
+argenctl rule add tearing --title "my-game*"
+
+# Autostart
+start() {
+    name="$(basename "$1")"
+    unit="argen-$name"
+    systemctl --user reset-failed "$unit" >/dev/null 2>&1 || true
+    echo Starting "$@"
+    systemd-run --user --unit "$unit" "$@" || true
+}
+restart() {
+    name="$(basename "$1")"
+    unit="argen-$name"
+    echo Stopping "$name"
+    systemctl --user stop "$unit" || true
+    systemctl --user reset-failed "$unit" >/dev/null 2>&1 || true
+    echo Starting "$@"
+    systemd-run --user --unit "$unit" "$@" || true
+}
+start $HOME/.scripts/idle.sh
+(sleep 2; start $HOME/.scripts/mute.sh -m)

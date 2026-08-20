@@ -9,9 +9,11 @@ export XDG_CONFIG_DIRS="/etc/xdg"
 export XDG_SCREENSHOTS_DIR="$HOME/Pictures/screenshots"
 export XDG_PICTURES_DIR="$HOME/Pictures"
 
-export LESS=-R
-
-export EDITOR=nvim
-export NMON=cmt
 
 export ZVM_INIT_MODE=sourcing
+
+export NMON=cmt
+export LESS=-R
+export VISUAL=nvim
+export EDITOR=nvim
+
